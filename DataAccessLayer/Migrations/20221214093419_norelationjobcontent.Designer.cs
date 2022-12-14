@@ -4,6 +4,7 @@ using DataAccessLayer.Concrete.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DataAccessLayer.Migrations
 {
     [DbContext(typeof(Context))]
-    partial class ContextModelSnapshot : ModelSnapshot
+    [Migration("20221214093419_norelationjobcontent")]
+    partial class norelationjobcontent
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -97,9 +100,6 @@ namespace DataAccessLayer.Migrations
                     b.Property<DateTime>("BirthDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("JobID")
-                        .HasColumnType("int");
-
                     b.Property<string>("SellerLastName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -120,8 +120,6 @@ namespace DataAccessLayer.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("SellerID");
-
-                    b.HasIndex("JobID");
 
                     b.ToTable("Sellers");
                 });
@@ -178,22 +176,6 @@ namespace DataAccessLayer.Migrations
                     b.Navigation("Seller");
 
                     b.Navigation("User");
-                });
-
-            modelBuilder.Entity("EntityLayer.Concrete.Seller", b =>
-                {
-                    b.HasOne("EntityLayer.Concrete.Job", "Job")
-                        .WithMany("Seller")
-                        .HasForeignKey("JobID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Job");
-                });
-
-            modelBuilder.Entity("EntityLayer.Concrete.Job", b =>
-                {
-                    b.Navigation("Seller");
                 });
 
             modelBuilder.Entity("EntityLayer.Concrete.Seller", b =>

@@ -12,11 +12,11 @@ namespace DataAccessLayer.Concrete.Context
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("server = (LocalDb)\\MSSQLLocalDB; database = Review_Me; integrated security = false");
+            optionsBuilder.UseSqlServer("server = (LocalDb)\\MSSQLLocalDB; database = ReviewMe; integrated security = false");
         }
         public DbSet<User> Users { get; set; }
         public DbSet<Content> Contents { get; set; }
-        public DbSet<Status> Statuses { get; set; }
+        public DbSet<Seller> Sellers { get; set; }
         public DbSet<Job> Jobs { get; set; }
     }
 }

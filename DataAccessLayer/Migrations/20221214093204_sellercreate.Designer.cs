@@ -4,6 +4,7 @@ using DataAccessLayer.Concrete.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DataAccessLayer.Migrations
 {
     [DbContext(typeof(Context))]
-    partial class ContextModelSnapshot : ModelSnapshot
+    [Migration("20221214093204_sellercreate")]
+    partial class sellercreate
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -40,6 +43,9 @@ namespace DataAccessLayer.Migrations
                     b.Property<string>("FlagContent")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("JobID")
+                        .HasColumnType("int");
+
                     b.Property<int?>("JobPhoto")
                         .HasColumnType("int");
 
@@ -57,6 +63,8 @@ namespace DataAccessLayer.Migrations
                         .HasColumnType("bit");
 
                     b.HasKey("ContentID");
+
+                    b.HasIndex("JobID");
 
                     b.HasIndex("SellerID");
 
@@ -97,9 +105,6 @@ namespace DataAccessLayer.Migrations
                     b.Property<DateTime>("BirthDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("JobID")
-                        .HasColumnType("int");
-
                     b.Property<string>("SellerLastName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -120,8 +125,6 @@ namespace DataAccessLayer.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("SellerID");
-
-                    b.HasIndex("JobID");
 
                     b.ToTable("Sellers");
                 });
@@ -163,6 +166,12 @@ namespace DataAccessLayer.Migrations
 
             modelBuilder.Entity("EntityLayer.Concrete.Content", b =>
                 {
+                    b.HasOne("EntityLayer.Concrete.Job", "Job")
+                        .WithMany("Content")
+                        .HasForeignKey("JobID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("EntityLayer.Concrete.Seller", "Seller")
                         .WithMany("Content")
                         .HasForeignKey("SellerID")
@@ -175,25 +184,16 @@ namespace DataAccessLayer.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.Navigation("Job");
+
                     b.Navigation("Seller");
 
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("EntityLayer.Concrete.Seller", b =>
-                {
-                    b.HasOne("EntityLayer.Concrete.Job", "Job")
-                        .WithMany("Seller")
-                        .HasForeignKey("JobID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Job");
-                });
-
             modelBuilder.Entity("EntityLayer.Concrete.Job", b =>
                 {
-                    b.Navigation("Seller");
+                    b.Navigation("Content");
                 });
 
             modelBuilder.Entity("EntityLayer.Concrete.Seller", b =>

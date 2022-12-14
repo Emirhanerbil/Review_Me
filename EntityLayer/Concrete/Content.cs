@@ -16,14 +16,14 @@ namespace EntityLayer.Concrete
         public string ContentText { get; set; }
         public int? JobPhoto { get; set; }
         public DateTime ContentDate { get; set; }
-        public virtual Status Status { get; set; }
-        [ForeignKey("Content")]
-        public int StatusID { get; set; }
+        public bool isFlagged { get; set; }
+        public string? FlagContent { get; set; }
 
-        public Job Job { get; set; }
-        public int JobID { get; set; }
+        
 
         public User User { get; set; }
         public int UserID { get; set; }
+        public Seller Seller { get; set; }
+        public int SellerID { get; set; }
     }
 }

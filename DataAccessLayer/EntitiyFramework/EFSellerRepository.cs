@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer.EntitiyFramework
 {
-    public class EFStatusRepository : GenericRepository<Status>, IStatusDal
+    public class EFSellerRepository: GenericRepository<Seller>, ISellerDal 
     {
     }
 }

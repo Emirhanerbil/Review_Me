@@ -4,6 +4,7 @@ using DataAccessLayer.Concrete.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DataAccessLayer.Migrations
 {
     [DbContext(typeof(Context))]
-    partial class ContextModelSnapshot : ModelSnapshot
+    [Migration("20221214092512_deletestatus")]
+    partial class deletestatus
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -40,10 +43,10 @@ namespace DataAccessLayer.Migrations
                     b.Property<string>("FlagContent")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("JobPhoto")
+                    b.Property<int>("JobID")
                         .HasColumnType("int");
 
-                    b.Property<int>("SellerID")
+                    b.Property<int?>("JobPhoto")
                         .HasColumnType("int");
 
                     b.Property<string>("Title")
@@ -58,7 +61,7 @@ namespace DataAccessLayer.Migrations
 
                     b.HasKey("ContentID");
 
-                    b.HasIndex("SellerID");
+                    b.HasIndex("JobID");
 
                     b.HasIndex("UserID");
 
@@ -84,46 +87,6 @@ namespace DataAccessLayer.Migrations
                     b.HasKey("JobID");
 
                     b.ToTable("Jobs");
-                });
-
-            modelBuilder.Entity("EntityLayer.Concrete.Seller", b =>
-                {
-                    b.Property<int>("SellerID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("SellerID"));
-
-                    b.Property<DateTime>("BirthDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("JobID")
-                        .HasColumnType("int");
-
-                    b.Property<string>("SellerLastName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("SellerMail")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("SellerName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("SellerPasword")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("SellerPhoto")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("SellerID");
-
-                    b.HasIndex("JobID");
-
-                    b.ToTable("Sellers");
                 });
 
             modelBuilder.Entity("EntityLayer.Concrete.User", b =>
@@ -163,9 +126,9 @@ namespace DataAccessLayer.Migrations
 
             modelBuilder.Entity("EntityLayer.Concrete.Content", b =>
                 {
-                    b.HasOne("EntityLayer.Concrete.Seller", "Seller")
+                    b.HasOne("EntityLayer.Concrete.Job", "Job")
                         .WithMany("Content")
-                        .HasForeignKey("SellerID")
+                        .HasForeignKey("JobID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -175,28 +138,12 @@ namespace DataAccessLayer.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Seller");
+                    b.Navigation("Job");
 
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("EntityLayer.Concrete.Seller", b =>
-                {
-                    b.HasOne("EntityLayer.Concrete.Job", "Job")
-                        .WithMany("Seller")
-                        .HasForeignKey("JobID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Job");
-                });
-
             modelBuilder.Entity("EntityLayer.Concrete.Job", b =>
-                {
-                    b.Navigation("Seller");
-                });
-
-            modelBuilder.Entity("EntityLayer.Concrete.Seller", b =>
                 {
                     b.Navigation("Content");
                 });

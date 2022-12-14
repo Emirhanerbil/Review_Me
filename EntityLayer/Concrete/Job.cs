@@ -13,6 +13,7 @@ namespace EntityLayer.Concrete
         public int JobID { get; set; }
         public string JobName { get; set; }
         public string JobDetails { get; set; }
-        public ICollection<Content> Content { get; set; }
+
+        public ICollection<Seller> Seller { get; set; }
     }
 }
