@@ -1,6 +1,7 @@
 ﻿using DataAccessLayer.Abstract;
 using DataAccessLayer.Concrete.Context;
 using EntityLayer.Concrete;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,7 +22,9 @@ namespace DataAccessLayer.Repositories
 
         public List<Content> GetAll()
         {
-            return c.Contents.ToList();
+            var ctx = new Context();
+            var list = ctx.Contents.FromSql($"Select * from Contents").ToList();
+            return list;
         }
 
         public Content GetById(int id)

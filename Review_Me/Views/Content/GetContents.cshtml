@@ -8,12 +8,15 @@
 
 x   
 <link href = "~/lib/bootstrap/dist/css/bootstrap.css" rel = "stylesheet"/>
+<link rel="icon" type="image/x-icon" href="~/wwwroot/favicon.ico">
 <table class = "table table-bordered" >
     <tr>    
         <th>Id</th>
         <th>Başlık</th>
         <th>İçerik</th>
         <th>Atan kişi</th>
+        <th>Meslek</th>
+        
         <th>Detaylar</th>
         <th>Sil</th>
 
@@ -25,7 +28,8 @@ x
             <td>@item.Title</td>
             <td>@item.ContentText</td>
             <td>@item.UserID</td>
-            @*<td>@item</td>*@
+            <td>@item.SellerID</td>
+            
             <td><a href="#" class "btn btn-warning">Detaylar</a></td>
             <td><a href="#" class "btn btn-danger">Sil</a></td>
             
