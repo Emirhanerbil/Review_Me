@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BusinessLayer.Abstract
 {
-    public class IContentService
+    public interface IContentService
     {
         void ContentAdd(Content content);
         void ContentRemove(Content content);
