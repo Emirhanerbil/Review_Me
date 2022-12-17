@@ -1,0 +1,42 @@
+﻿
+@{
+    Layout = null;
+}
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+
+    @using (Html.BeginForm("AddContent","Content", FormMethod.Post))  
+{
+    
+    <div class="col-12 grid-margin stretch-card"> 
+        <div class="card" >
+            <div class="card-body">
+                <h4 class="card-title">Review Ekle</h4>
+                <br />
+                <form class="forms-sample">
+                    <div class="form-group">
+                        <label>Başlık ekle</label>
+                        <input type="text" class="form-control" name="Title">
+
+                        <label class="mt-5">İçeriği girin</label>
+                        <input type="text" class="form-control" name="ContentText">
+
+                        <label class="mt-5">Tarih</label>
+                        <input type="text" class="form-control" name="ContentDate">
+
+                        <label class="mt-5">Şikayet edildi mi</label>
+                        <input type="text" class="form-control" name="isFlagged">
+
+                        <label class="mt-5">UserId</label>
+                        <input type="text" class="form-control" name="UserID">
+
+                        <label class="mt-5">Seller ID</label>
+                        <input type="text" class="form-control" name="SellerID">
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-lg mt-4  mt-5">Kaydet</button>
+                </form>
+            </div>
+        </div>
+    </div>
+}
+
+

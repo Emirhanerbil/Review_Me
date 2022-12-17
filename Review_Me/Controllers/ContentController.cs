@@ -1,5 +1,6 @@
 ﻿using BusinessLayer.Concrete;
 using DataAccessLayer.EntitiyFramework;
+using EntityLayer.Concrete;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Review_Me.Controllers
@@ -15,6 +16,19 @@ namespace Review_Me.Controllers
         {
             var content = cm.GetContents();
             return View(content);
+        }
+
+        public IActionResult AddContent()
+        {
+            
+            return View();
+        }
+        [HttpPost]
+        public IActionResult AddContent(Content content)
+        {
+            cm.ContentAdd(content);
+            return RedirectToAction(nameof(GetContents));
+
         }
     }
 }
