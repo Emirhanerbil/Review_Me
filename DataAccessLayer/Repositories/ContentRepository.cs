@@ -1,10 +1,12 @@
 ﻿using DataAccessLayer.Abstract;
 using DataAccessLayer.Concrete.Context;
 using EntityLayer.Concrete;
+using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
@@ -41,10 +43,19 @@ namespace DataAccessLayer.Repositories
 
         }
 
+        public List<Content> SearchName(string name)
+        {
+            var ctx = new Context();
+            var list = ctx.Contents.FromSql($"select * from Contents where  Contents.ContentText like ({"%name%"})  or Contents.Title like ({"%name%"}) ").ToList();
+            return list;
+        }
+
         public void Update(Content item)
         {
             c.Update(item);
             c.SaveChanges();
         }
+
+        
     }
 }

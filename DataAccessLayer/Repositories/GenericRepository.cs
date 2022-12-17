@@ -1,5 +1,6 @@
 ﻿using DataAccessLayer.Abstract;
 using DataAccessLayer.Concrete.Context;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -32,6 +33,11 @@ namespace DataAccessLayer.Repositories
         {
             c.Add(item);
             c.SaveChanges();
+        }
+
+        public List<T> SearchName(string name)
+        {
+            throw new NotImplementedException();
         }
 
         public void Update(T item)

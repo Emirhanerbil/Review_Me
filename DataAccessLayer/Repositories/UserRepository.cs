@@ -1,6 +1,7 @@
 ﻿using DataAccessLayer.Abstract;
 using DataAccessLayer.Concrete.Context;
 using EntityLayer.Concrete;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -47,6 +48,11 @@ namespace DataAccessLayer.Repositories
         {
             c.Remove(user);
             c.SaveChanges();
+        }
+
+        public List<User> SearchName(string name)
+        {
+            throw new NotImplementedException();
         }
 
         public void Update(User item)

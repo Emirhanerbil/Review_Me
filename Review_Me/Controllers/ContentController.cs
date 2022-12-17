@@ -1,5 +1,6 @@
 ﻿using BusinessLayer.Concrete;
 using DataAccessLayer.EntitiyFramework;
+using DataAccessLayer.Repositories;
 using EntityLayer.Concrete;
 using Microsoft.AspNetCore.Mvc;
 
@@ -8,6 +9,7 @@ namespace Review_Me.Controllers
     public class ContentController : Controller
     {
         ContentManager cm = new ContentManager(new EFContentRepository());
+        ContentRepository cr = new ContentRepository();
         public IActionResult Index()
         {
             return View();
@@ -28,6 +30,13 @@ namespace Review_Me.Controllers
         {
             cm.ContentAdd(content);
             return RedirectToAction(nameof(GetContents));
+
+        }
+        
+        public IActionResult Search(string searchTerm)
+        {
+            var searchResults = cm.GetContentByName(searchTerm);
+            return View(searchResults);
 
         }
     }

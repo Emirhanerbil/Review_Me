@@ -1,18 +1,24 @@
-﻿@using EntityLayer.Concrete
-@model List<Content>
-
+﻿
+@model List<EntityLayer.Concrete.Content>
 
 @{
     Layout = null;
 }
+<link href = "~/lib/bootstrap/dist/css/bootstrap.min.css" rel = "stylesheet"/>
+<br />
+<br />
+@using (Html.BeginForm("Search","Content", FormMethod.Post))
+{
+    <div>
+        <label for="searchResults">Arama:</label>
+        <input type="text" id="searchTerm" name="searchTerm" />
+        <input type="submit" value="Ara" />
+    </div>
+}
 
 
-<link href = "~/lib/bootstrap/dist/css/bootstrap.css" rel = "stylesheet"/>
-<link rel="icon" type="image/x-icon" href="~/wwwroot/favicon.ico">
-
-
-
-
+<h1>Arama Sonuçları</h1>
+<br />
 
 <table class = "table table-bordered" >
     <tr>    
@@ -20,9 +26,9 @@
         <th>Başlık</th>
         <th>İçerik</th>
         <th>Atan kişi</th>
-        <th>Atılan kişi</th>
+        <th>Meslek</th>
         
-        <th>Tarih</th>
+        <th>Detaylar</th>
         <th>Sil</th>
 
     </tr>
@@ -34,16 +40,14 @@
             <td>@item.ContentText</td>
             <td>@item.UserID</td>
             <td>@item.SellerID</td>
-            <td>@item.ContentDate.ToShortDateString()</td>
-           
+            
+            <td><a href="#" class "btn btn-warning">Detaylarr</a></td>
             <td><a href="#" class "btn btn-danger">Sil</a></td>
             
             
         </tr>
     }
 </table>
-<a href="/Content/AddContent" class="btn btn-outline-info">Yeni Content Ekle</a>
-<a href="/Content/Search" class="btn btn-outline-info">Ara</a>
 
 
 

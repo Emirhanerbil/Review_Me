@@ -18,5 +18,12 @@ namespace DataAccessLayer.Concrete.Context
         public DbSet<Content> Contents { get; set; }
         public DbSet<Seller> Sellers { get; set; }
         public DbSet<Job> Jobs { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Content>()
+                .Property(b => b.ContentDate)
+                .HasDefaultValueSql("getdate()");
+        }
     }
 }

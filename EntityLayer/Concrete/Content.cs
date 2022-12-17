@@ -10,16 +10,18 @@ namespace EntityLayer.Concrete
 {
     public class Content
     {
+        
+
         [Key]
         public int ContentID { get; set; }
         public string Title { get; set; }
         public string ContentText { get; set; }
         public int? JobPhoto { get; set; }
-        public DateTime ContentDate { get; set; }
+        public DateTime ContentDate { get ;  set ; }
         public bool isFlagged { get; set; }
         public string? FlagContent { get; set; }
 
-        
+
 
         public User User { get; set; }
         public int UserID { get; set; }
