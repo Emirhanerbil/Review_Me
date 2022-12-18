@@ -1,23 +1,31 @@
 ﻿using BusinessLayer.Concrete;
+using DataAccessLayer.Concrete.Context;
 using DataAccessLayer.EntitiyFramework;
 using DataAccessLayer.Repositories;
 using EntityLayer.Concrete;
 using Microsoft.AspNetCore.Mvc;
+using Review_Me.Models;
 
 namespace Review_Me.Controllers
 {
     public class ContentController : Controller
     {
         ContentManager cm = new ContentManager(new EFContentRepository());
-        ContentRepository cr = new ContentRepository();
+        Context context = new Context();
+        ContentSellerUser su = new ContentSellerUser();
         public IActionResult Index()
         {
             return View();
         }
         public IActionResult GetContents()
         {
-            var content = cm.GetContents();
-            return View(content);
+            //var content = cm.GetContents();
+            //return View(content);
+            su.Sellers = su.Sellers.ToList();
+            su.Users = context.Users.ToList();
+            su.Contents = context.Contents.ToList();
+            return View(su);
+
         }
 
         public IActionResult AddContent()
@@ -39,5 +47,12 @@ namespace Review_Me.Controllers
             return View(searchResults);
 
         }
+        public IActionResult Remove(int id)
+        {
+            var value = cm.GetContentByID(id);
+            cm.ContentRemove(value);
+            return RedirectToAction(nameof(GetContents));
+        }
+        
     }
 }

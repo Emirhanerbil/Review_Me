@@ -25,5 +25,6 @@ namespace DataAccessLayer.Concrete.Context
                 .Property(b => b.ContentDate)
                 .HasDefaultValueSql("getdate()");
         }
+       
     }
 }

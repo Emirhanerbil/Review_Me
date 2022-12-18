@@ -1,5 +1,5 @@
 ﻿@using EntityLayer.Concrete
-@model List<Content>
+@model ContentSellerUser
 
 
 @{
@@ -8,7 +8,7 @@
 
 
 <link href = "~/lib/bootstrap/dist/css/bootstrap.css" rel = "stylesheet"/>
-<link rel="icon" type="image/x-icon" href="~/wwwroot/favicon.ico">
+<link rel="icon" type="image/x-icon" href="~/favicon.ico">
 
 
 
@@ -21,22 +21,21 @@
         <th>İçerik</th>
         <th>Atan kişi</th>
         <th>Atılan kişi</th>
-        
         <th>Tarih</th>
         <th>Sil</th>
 
     </tr>
-    @foreach (var item in Model)
+    @foreach (var item in Model.Contents)
     {
+        
         <tr>
             <td>@item.ContentID</td>
             <td>@item.Title</td>
             <td>@item.ContentText</td>
-            <td>@item.UserID</td>
-            <td>@item.SellerID</td>
+            <td>@item.User.UserFirstName</td>
+            <td>@(item.Seller?.SellerName ?? "N/A")</td>
             <td>@item.ContentDate.ToShortDateString()</td>
-           
-            <td><a href="#" class "btn btn-danger">Sil</a></td>
+            <td><a href="/Content/Remove/@item.ContentID" class="btn btn-outline-danger">Sil</a></td>
             
             
         </tr>
