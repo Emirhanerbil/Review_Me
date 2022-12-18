@@ -12,16 +12,17 @@ namespace Review_Me.Controllers
     {
         ContentManager cm = new ContentManager(new EFContentRepository());
         Context context = new Context();
-        ContentSellerUser su = new ContentSellerUser();
+        
         public IActionResult Index()
         {
             return View();
         }
         public IActionResult GetContents()
         {
-            //var content = cm.GetContents();
+            ContentSellerUser su = new ContentSellerUser();
+            var content = cm.GetContents();
             //return View(content);
-            su.Sellers = su.Sellers.ToList();
+            su.Sellers = context.Sellers.ToList();
             su.Users = context.Users.ToList();
             su.Contents = context.Contents.ToList();
             return View(su);
