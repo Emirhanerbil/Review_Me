@@ -32,18 +32,19 @@
             <td>@item.ContentID</td>
             <td>@item.Title</td>
             <td>@item.ContentText</td>
-
+<<<<<<<<< Temporary merge branch 1
+            <td>@item.UserID</td>
+            <td>@item.SellerID</td>
+<<<<<<<<< Temporary merge branch 1
+            
+            <td><a href="#" class "btn btn-warning">Detaylar</a></td>
+            <td><a href="#" class "btn btn-danger">Sil</a></td>
+=========
             <td>@item.User.UserFirstName</td>
             <td>@(item.Seller?.SellerName ?? "N/A")</td>
             <td>@item.ContentDate.ToShortDateString()</td>
             <td><a href="/Content/Remove/@item.ContentID" class="btn btn-outline-danger">Sil</a></td>
-
-            <td>@item.UserID</td>
-            <td>@item.SellerID</td>
-            
-            <td><a href="#" class "btn btn-warning">Detaylar</a></td>
-            <td><a href="#" class "btn btn-danger">Sil</a></td>
-
+>>>>>>>>> Temporary merge branch 2
             
             
         </tr>
