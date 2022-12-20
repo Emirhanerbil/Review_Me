@@ -25,8 +25,11 @@ namespace DataAccessLayer.Concrete.Context
                 .Property(b => b.ContentDate)
                 .HasDefaultValueSql("getdate()");
 
-            modelBuilder.Entity<Content>().Property(x => x.isFlagged).HasDefaultValue();
+            modelBuilder.Entity<Content>().Property(x => x.isFlagged).HasDefaultValue(0);
+
+            
+
         }
-       
+
     }
 }
