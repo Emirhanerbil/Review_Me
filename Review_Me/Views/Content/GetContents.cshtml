@@ -23,6 +23,8 @@
         <th>Atılan kişi</th>
         <th>Tarih</th>
         <th>Sil</th>
+        <th>Güncelle</th>
+
 
     </tr>
     @foreach (var item in Model.Contents)
@@ -36,6 +38,7 @@
             <td>@item.Seller.SellerName</td>
             <td>@item.ContentDate.ToShortDateString()</td>
             <td><a href="/Content/Remove/@item.ContentID" class="btn btn-outline-danger">Sil</a></td>
+            <td><a href="/Content/Update/@item.ContentID" class="btn btn-info">Güncelle</a></td>
             
         </tr>
     }
