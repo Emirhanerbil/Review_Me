@@ -64,7 +64,7 @@ namespace Review_Me.Controllers
         public IActionResult Update(Content content)
         {
             cm.ContentUpdate(content);
-            return RedirectToAction("GetContents");
+            return RedirectToAction(nameof(GetContents));
         }
 
 
