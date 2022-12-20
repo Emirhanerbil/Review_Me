@@ -1,0 +1,39 @@
+﻿@model EntityLayer.Concrete.Content
+@{
+    Layout = null;
+}
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+
+ <form method="post" asp-action="Update">
+    <input asp-for="ContentID" hidden />
+    <div class="col-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">İçeriği Güncelle</h4>
+                <br />
+        </div>
+         <form class="forms-sample">
+                <div class="form-group">
+
+                    <label>İçerik Adı </label>
+                    <input asp-for="Title" class="form-control" />
+
+                    <label class="mt-5">İçeriği girin</label>
+                    <input asp-for="ContentText" class="form-control" />
+
+                    <label class="mt-5">Şikayet edildi mi</label>
+                    <input asp-for="isFlagged" class="form-control" />
+
+                    <label class="mt-5">Userid</label>
+                    <input asp-for="UserID" class="form-control" />
+
+                    <label class="mt-5">Sellerid</label>
+                    <input asp-for="SellerID" class="form-control" />
+                </div>
+
+                <button type="submit" class="btn btn-outline-info mt-5">Güncelle</button>
+            </form>
+
+    </div>
+    </div>
+</form>

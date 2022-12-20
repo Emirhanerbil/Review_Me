@@ -20,7 +20,7 @@ namespace Review_Me.Controllers
         public IActionResult GetContents()
         {
             ContentSellerUser su = new ContentSellerUser();
-            var content = cm.GetContents();
+            //var content = cm.GetContents();
             //return View(content);
             su.Sellers = context.Sellers.ToList();
             su.Users = context.Users.ToList();
@@ -54,6 +54,24 @@ namespace Review_Me.Controllers
             cm.ContentRemove(value);
             return RedirectToAction(nameof(GetContents));
         }
-        
+
+        public IActionResult Update(int id)
+        {
+            var value = cm.GetContentByID(id);
+            return View(value);
+        }
+        [HttpPost]
+        public IActionResult Update(Content content)
+        {
+            cm.ContentUpdate(content);
+            return RedirectToAction("GetContents");
+        }
+
+        public IActionResult GetContentsJobs(Content content)
+        {
+            return View();
+        }
+
+
     }
 }
