@@ -54,24 +54,6 @@ namespace Review_Me.Controllers
             cm.ContentRemove(value);
             return RedirectToAction(nameof(GetContents));
         }
-
-        public IActionResult Update(int id)
-        {
-            var value = cm.GetContentByID(id);
-            return View(value);
-        }
-        [HttpPost]
-        public IActionResult Update(Content content)
-        {
-            cm.ContentUpdate(content);
-            return RedirectToAction("GetContents");
-        }
-
-        public IActionResult GetContentsJobs(Content content)
-        {
-            return View();
-        }
-
-
+        
     }
 }
