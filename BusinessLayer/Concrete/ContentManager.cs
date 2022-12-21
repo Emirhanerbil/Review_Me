@@ -34,6 +34,7 @@ namespace BusinessLayer.Concrete
 
         public void ContentUpdate(Content content)
         {
+            content.ContentDate = DateTime.Now;
             contentDal.Update(content);
         }
 

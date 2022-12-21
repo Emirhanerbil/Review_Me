@@ -13,6 +13,7 @@ namespace Review_Me.Controllers
         ContentManager cm = new ContentManager(new EFContentRepository());
         Context context = new Context();
         
+
         public IActionResult Index()
         {
             return View();
@@ -54,9 +55,29 @@ namespace Review_Me.Controllers
             cm.ContentRemove(value);
             return RedirectToAction(nameof(GetContents));
         }
+
         public IActionResult GetContentsJobs()
         {
             return View();
-;        }
+       }
+
+
+        public IActionResult Update(int id)
+        {
+            
+            var value = cm.GetContentByID(id);
+            return View(value);
+        }
+        [HttpPost]
+        public IActionResult Update(Content content)
+        {
+            
+            cm.ContentUpdate(content);
+            return RedirectToAction(nameof(GetContents));
+        }
+
+
+
+
     }
 }
