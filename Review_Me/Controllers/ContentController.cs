@@ -54,6 +54,9 @@ namespace Review_Me.Controllers
             cm.ContentRemove(value);
             return RedirectToAction(nameof(GetContents));
         }
-        
+        public IActionResult GetContentsJobs()
+        {
+            return View();
+;        }
     }
 }

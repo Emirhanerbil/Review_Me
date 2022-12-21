@@ -1,5 +1,4 @@
-﻿
-@{
+﻿@{
     ViewData["Title"] = "GetContents";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
@@ -22,7 +21,6 @@
         </div>
     </section>
     <!-- //inner banner -->
-
     <!-- courses section -->
     <section class="w3l-courses py-5" id="courses">
         <div class="container py-lg-5 py-md-4 py-2">
@@ -46,9 +44,11 @@
                                     <li><span class="fas fa-star-o"></span></li>
                                 </ul>
                             </div>
-                            <a href="classes.html" class="course-desc">Lorem ipsum, dolor sit amet consectetur
+                            <a href="classes.html" class="course-desc">
+                                Lorem ipsum, dolor sit amet consectetur
                                 adipisicing elit. Dolores impedit dolore est aut perferendis dolorum unde consectetur
-                                eos. Labore, ducimus? </a>
+                                eos. Labore, ducimus?
+                            </a>
                             <div class="course-meta mt-4">
                             </div>
                         </div>
@@ -72,9 +72,11 @@
                                     <li><span class="fas fa-star-o"></span></li>
                                 </ul>
                             </div>
-                            <a href="classes.html" class="course-desc">Lorem ipsum, dolor sit amet consectetur
+                            <a href="classes.html" class="course-desc">
+                                Lorem ipsum, dolor sit amet consectetur
                                 adipisicing elit. Dolores impedit dolore est aut perferendis dolorum unde consectetur
-                                eos. Labore, ducimus? </a>
+                                eos. Labore, ducimus?
+                            </a>
                             <div class="course-meta mt-4">
                             </div>
                         </div>
@@ -84,41 +86,41 @@
             </div>
     </section>
     <!-- //courses section -->
-
     <!-- content block1 -->
     <section class="w3l-content-block1 py-5" id="login">
         <div class="container py-md-5 py-4">
             <div class="row">
                 <div class="col-lg-6 col-md-8 title-content py-md-5">
-                    <h3 class="title-style text-white">Kayıt Ol Ve Değerlendir</h3>               
+                    <h3 class="title-style text-white">Kayıt Ol Ve Değerlendir</h3>
                     <div class="mt-5" id="blur">
                         <button id="show-login" onclick="toggle()" class="btn btn-style mt-4">Giriş Yap/Kayıt Ol</button>
-                      </div>
-                      <div class="popup">
+                    </div>
+                    <div class="popup">
                         <div class="close-btn" onclick="toggle()"><b>X</b></div>
                         <div class="form">
-                          <h2>Giriş Yap</h2>
-                          <div class="form-element">
-                            <label for="email">Email</label>
-                            <input type="text" id="email" placeholder="E-postanızı Giriniz">
+                            <h2>Giriş Yap</h2>
                             <div class="form-element">
-                              <label for="password">Şifre</label>
-                              <input type="password" id="password" placeholder="Şifrenizi Giriniz">
-                              <div class="form-element">
-                              <a href="#"><button class="btn btn-style mt-4">Giriş Yap</button></a>  
-                              </div>
-                              <div class="form-control" style="border: none;">
-                                <a href="#">Kayıt Ol</a>
-                              </div>
+                                <label for="email">Email</label>
+                                <input type="text" id="email" placeholder="E-postanızı Giriniz">
+                                <div class="form-element">
+                                    <label for="password">Şifre</label>
+                                    <input type="password" id="password" placeholder="Şifrenizi Giriniz">
+                                    <div class="form-element">
+                                        <a href="#"><button class="btn btn-style mt-4">Giriş Yap</button></a>
+                                    </div>
+                                    <div class="form-control" style="border: none;">
+                                        <a href="#">Kayıt Ol</a>
+                                    </div>
+                                </div>
                             </div>
-                          </div>
                         </div>
-                      </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <<<<<<< HEAD
     <!-- footer -->
     <footer class="w3l-footer-16">
         <div class="footer-top-16 py-5">
@@ -192,6 +194,39 @@
 
     </footer>
     <!-- //footer -->
+    =======
+    <table class="table table-bordered">
+        <tr>
+            <th>Id</th>
+            <th>Başlık</th>
+            <th>İçerik</th>
+            <th>Atan kişi</th>
+            <th>Atılan kişi</th>
+            <th>Tarih</th>
+            <th>Sil</th>
+            <th>Güncelle</th>
+
+
+        </tr>
+        @foreach (var item in Model.Contents)
+        {
+
+            <tr>
+                <td>@item.ContentID</td>
+                <td>@item.Title</td>
+                <td>@item.ContentText</td>
+                <td>@item.User.UserFirstName</td>
+                <td>@item.Seller.SellerName</td>
+                <td>@item.ContentDate.ToShortDateString()</td>
+                <td><a href="/Content/Remove/@item.ContentID" class="btn btn-outline-danger">Sil</a></td>
+                <td><a href="/Content/Update/@item.ContentID" class="btn btn-info">Güncelle</a></td>
+
+            </tr>
+        }
+    </table>
+    <a href="/Content/AddContent" class="btn btn-outline-info">Yeni Content Ekle</a>
+    <a href="/Content/Search" class="btn btn-outline-info">Ara</a>
+    >>>>>>> e71f033e30dbe427521d35d771359e199d6ba690
 
     <!-- Js scripts -->
     <!-- move top -->
@@ -219,40 +254,41 @@
         }
     </script>
     <!-- //move top -->
-
     <!-- common jquery plugin -->
     <script src="~/ReviewMe/ReviewMe/assets/js/jquery-3.3.1.min.js"></script>
     <!-- //common jquery plugin -->
+    <!-- theme switch js (light and dark)-->
+    <script src="~/ReviewMe/ReviewMe/assets/js/theme-change.js"></script>
+    <script src="~/ReviewMe/ReviewMe/assets/js/login.js"></script>
+    <!-- //theme switch js (light and dark)-->
+    <!-- MENU-JS -->
+    <script>
+        $(window).on("scroll", function () {
+            var scroll = $(window).scrollTop();
 
-<table class = "table table-bordered" >
-    <tr>    
-        <th>Id</th>
-        <th>Başlık</th>
-        <th>İçerik</th>
-        <th>Atan kişi</th>
-        <th>Atılan kişi</th>
-        <th>Tarih</th>
-        <th>Sil</th>
+            if (scroll >= 80) {
+                $("#site-header").addClass("nav-fixed");
+            } else {
+                $("#site-header").removeClass("nav-fixed");
+            }
+        });
 
-    </tr>
-    @foreach (var item in Model.Contents)
-    {
-        
-        <tr>
-            <td>@item.ContentID</td>
-            <td>@item.Title</td>
-            <td>@item.ContentText</td>
-            <td>@item.User.UserFirstName</td>
-            <td>@item.Seller.SellerName</td>
-            <td>@item.ContentDate.ToShortDateString()</td>
-            <td><a href="/Content/Remove/@item.ContentID" class="btn btn-outline-danger">Sil</a></td>
-            
-        </tr>
-    }
-</table>
-<a href="/Content/AddContent" class="btn btn-outline-info">Yeni Content Ekle</a>
-<a href="/Content/Search" class="btn btn-outline-info">Ara</a>
-
+        //Main navigation Active Class Add Remove
+        $(".navbar-toggler").on("click", function () {
+            $("header").toggleClass("active");
+        });
+        $(document).on("ready", function () {
+            if ($(window).width() > 991) {
+                $("header").removeClass("active");
+            }
+            $(window).on("resize", function () {
+                if ($(window).width() > 991) {
+                    $("header").removeClass("active");
+                }
+            });
+        });
+    </script>
+    <!-- //MENU-JS -->
     <!-- disable body scroll which navbar is in active -->
     <script>
         $(function () {
@@ -262,7 +298,6 @@
         });
     </script>
     <!-- //disable body scroll which navbar is in active -->
-
     <!-- bootstrap -->
     <script src="~/ReviewMe/ReviewMe/assets/js/bootstrap.min.js"></script>
     <!-- //bootstrap -->
