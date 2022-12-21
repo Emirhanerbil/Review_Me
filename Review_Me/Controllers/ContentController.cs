@@ -56,6 +56,12 @@ namespace Review_Me.Controllers
             return RedirectToAction(nameof(GetContents));
         }
 
+        public IActionResult GetContentsJobs()
+        {
+            return View();
+       }
+
+
         public IActionResult Update(int id)
         {
             
@@ -69,6 +75,7 @@ namespace Review_Me.Controllers
             cm.ContentUpdate(content);
             return RedirectToAction(nameof(GetContents));
         }
+
 
 
 

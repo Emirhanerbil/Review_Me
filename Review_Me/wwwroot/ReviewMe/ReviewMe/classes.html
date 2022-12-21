@@ -1,13 +1,69 @@
-﻿@{
-    ViewData["Title"] = "GetContents";
-    Layout = "~/Views/Shared/_Layout.cshtml";
-}
-
 
 <!doctype html>
 <html lang="en">
 
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ReviewMe</title>
+    <!-- Google fonts -->
+    <link href="//fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- Template CSS Style link -->
+    <link rel="stylesheet" href="assets/css/style-starter.css">
+</head>
+
 <body>
+    <!-- header -->
+    <header id="site-header" class="fixed-top">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <a class="navbar-brand" href="index.html">
+                    ReviewMe<i class="fas fa-bread-slice ms-1"></i>
+                </a>
+                <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon fa icon-expand fa-bars"></span>
+                    <span class="navbar-toggler-icon fa icon-close fa-times"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarScroll">
+                    <ul class="navbar-nav ms-auto my-2 my-lg-0 navbar-nav-scroll">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="index.html">Ana Sayfa</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="classes.html">Değerlendirmeler</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#login">Kayıt Ol/Giriş Yap</a>
+                        </li>
+                    </ul>
+                    <form action="#search" method="GET" class="d-flex search-header ms-lg-2">
+                        <input class="form-control" type="search" placeholder="Ara..." aria-label="Search"
+                               required>
+                        <button class="btn btn-style" type="submit"><i class="fas fa-search"></i></button>
+                    </form>
+                </div>
+                <!-- toggle switch for light and dark theme -->
+                <div class="cont-ser-position">
+                    <nav class="navigation">
+                        <div class="theme-switch-wrapper">
+                            <label class="theme-switch" for="checkbox">
+                                <input type="checkbox" id="checkbox">
+                                <div class="mode-container">
+                                    <i class="gg-sun"></i>
+                                    <i class="gg-moon"></i>
+                                </div>
+                            </label>
+                        </div>
+                    </nav>
+                </div>
+                <!-- //toggle switch for light and dark theme -->
+            </nav>
+        </div>
+    </header>
+    <!-- //header -->
     <!-- inner banner -->
     <section class="inner-banner py-5">
         <div class="w3l-breadcrumb py-lg-5">
@@ -25,65 +81,151 @@
     <section class="w3l-courses py-5" id="courses">
         <div class="container py-lg-5 py-md-4 py-2">
             <h3 class="title-style text-center">En Fazla Değerlendirilen Hizmetler</h3>
-            <div class="col justify-content-center ">
+            <div class="row justify-content-center">
                 <div class="col-lg-4 col-md-6 item mt-5">
                     <div class="card">
                         <div class="card-header p-0 position-relative">
                             <a href="classes.html" class="zoom d-block">
-                                <img class="card-img-bottom d-block" src="~/ReviewMe/ReviewMe/assets/images/banner5.jpg" alt="Card image cap">
+                                <img class="card-img-bottom d-block" src="assets/images/tutor2.png" alt="Card image cap">
                             </a>
+
                         </div>
                         <div class="card-body course-details">
                             <div class="price-review d-flex justify-content-between mb-1align-items-center">
-                                <p>Mehmet Usta</p>
-                                <ul class="rating-star">
-                                    <li><span class="fas fa-star"></span></li>
-                                    <li><span class="fas fa-star"></span></li>
-                                    <li><span class="fas fa-star"></span></li>
-                                    <li><span class="fas fa-star"></span></li>
-                                    <li><span class="fas fa-star-o"></span></li>
-                                </ul>
                             </div>
-                            <a href="classes.html" class="course-desc">
-                                Lorem ipsum, dolor sit amet consectetur
-                                adipisicing elit. Dolores impedit dolore est aut perferendis dolorum unde consectetur
-                                eos. Labore, ducimus?
-                            </a>
+                            <a href="classes.html" class="course-desc">Özel Ders Öğretmeni </a>
                             <div class="course-meta mt-4">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 item mt-5">
-                    <div class="card">
-                        <div class="card-header p-0 position-relative">
-                            <a href="classes.html" class="zoom d-block">
-                                <img class="card-img-bottom d-block" src="~/ReviewMe/ReviewMe/assets/images/c2.jpg" alt="Card image cap">
-                            </a>
-                        </div>
-                        <div class="card-body course-details">
-                            <div class="price-review d-flex justify-content-between mb-1align-items-center">
-                                <p>Halim Usta</p>
-                                <ul class="rating-star">
-                                    <li><span class="fas fa-star"></span></li>
-                                    <li><span class="fas fa-star"></span></li>
-                                    <li><span class="fas fa-star"></span></li>
-                                    <li><span class="fas fa-star"></span></li>
-                                    <li><span class="fas fa-star-o"></span></li>
-                                </ul>
-                            </div>
-                            <a href="classes.html" class="course-desc">
-                                Lorem ipsum, dolor sit amet consectetur
-                                adipisicing elit. Dolores impedit dolore est aut perferendis dolorum unde consectetur
-                                eos. Labore, ducimus?
-                            </a>
-                            <div class="course-meta mt-4">
+                                <div class="meta-item course-lesson">
+                                    <span class="fas fa-users"></span>
+                                    <span class="meta-value"> 82  değerlendirme</span>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
+                <div class="col-lg-4 col-md-6 item mt-5">
+                    <div class="card">
+                        <div class="card-header p-0 position-relative">
+                            <a href="classes.html" class="zoom d-block">
+                                <img class="card-img-bottom d-block" src="assets/images/tutor2.png" alt="Card image cap">
+                            </a>
+
+                        </div>
+                        <div class="card-body course-details">
+                            <div class="price-review d-flex justify-content-between mb-1align-items-center">
+                            </div>
+                            <a href="classes.html" class="course-desc">Özel Ders Öğretmeni </a>
+                            <div class="course-meta mt-4">
+                                <div class="meta-item course-lesson">
+                                    <span class="fas fa-users"></span>
+                                    <span class="meta-value"> 82  değerlendirme</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 item mt-5">
+                    <div class="card">
+                        <div class="card-header p-0 position-relative">
+                            <a href="classes.html" class="zoom d-block">
+                                <img class="card-img-bottom d-block" src="assets/images/tutor2.png" alt="Card image cap">
+                            </a>
+
+                        </div>
+                        <div class="card-body course-details">
+                            <div class="price-review d-flex justify-content-between mb-1align-items-center">
+                            </div>
+                            <a href="classes.html" class="course-desc">Özel Ders Öğretmeni </a>
+                            <div class="course-meta mt-4">
+                                <div class="meta-item course-lesson">
+                                    <span class="fas fa-users"></span>
+                                    <span class="meta-value"> 82  değerlendirme</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 item mt-5">
+                    <div class="card">
+                        <div class="card-header p-0 position-relative">
+                            <a href="classes.html" class="zoom d-block">
+                                <img class="card-img-bottom d-block" src="assets/images/tutor2.png" alt="Card image cap">
+                            </a>
+
+                        </div>
+                        <div class="card-body course-details">
+                            <div class="price-review d-flex justify-content-between mb-1align-items-center">
+                            </div>
+                            <a href="classes.html" class="course-desc">Özel Ders Öğretmeni </a>
+                            <div class="course-meta mt-4">
+                                <div class="meta-item course-lesson">
+                                    <span class="fas fa-users"></span>
+                                    <span class="meta-value"> 82  değerlendirme</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 item mt-5">
+                    <div class="card">
+                        <div class="card-header p-0 position-relative">
+                            <a href="classes.html" class="zoom d-block">
+                                <img class="card-img-bottom d-block" src="assets/images/tutor2.png" alt="Card image cap">
+                            </a>
+
+                        </div>
+                        <div class="card-body course-details">
+                            <div class="price-review d-flex justify-content-between mb-1align-items-center">
+                            </div>
+                            <a href="classes.html" class="course-desc">Özel Ders Öğretmeni </a>
+                            <div class="course-meta mt-4">
+                                <div class="meta-item course-lesson">
+                                    <span class="fas fa-users"></span>
+                                    <span class="meta-value"> 82  değerlendirme</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 item mt-5">
+                    <div class="card">
+                        <div class="card-header p-0 position-relative">
+                            <a href="classes.html" class="zoom d-block">
+                                <img class="card-img-bottom d-block" src="assets/images/tutor2.png" alt="Card image cap">
+                            </a>
+
+                        </div>
+                        <div class="card-body course-details">
+                            <div class="price-review d-flex justify-content-between mb-1align-items-center">
+                            </div>
+                            <a href="classes.html" class="course-desc">Özel Ders Öğretmeni </a>
+                            <div class="course-meta mt-4">
+                                <div class="meta-item course-lesson">
+                                    <span class="fas fa-users"></span>
+                                    <span class="meta-value"> 82  değerlendirme</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
+            <!-- pagination -->
+            <!-- <div class="pagination-wrapper mt-5 pt-lg-3 text-center">
+                <ul class="page-pagination">
+                    <li><span aria-current="page" class="page-numbers current">1</span></li>
+                    <li><a class="page-numbers" href="#url">2</a></li>
+                    <li><a class="page-numbers" href="#url">3</a></li>
+                    <li><a class="page-numbers" href="#url">...</a></li>
+                    <li><a class="page-numbers" href="#url">15</a></li>
+                    <li><a class="next" href="#url">Next <span class="fa fa-angle-right"></span></a></li>
+                </ul>
+            </div> -->
+            <!-- //pagination -->
+        </div>
     </section>
     <!-- //courses section -->
     <!-- content block1 -->
@@ -119,8 +261,7 @@
             </div>
         </div>
     </section>
-
-    <<<<<<< HEAD
+    <!-- //content block1 -->
     <!-- footer -->
     <footer class="w3l-footer-16">
         <div class="footer-top-16 py-5">
@@ -193,41 +334,6 @@
         </div>
 
     </footer>
-    <!-- //footer -->
-    =======
-    <table class="table table-bordered">
-        <tr>
-            <th>Id</th>
-            <th>Başlık</th>
-            <th>İçerik</th>
-            <th>Atan kişi</th>
-            <th>Atılan kişi</th>
-            <th>Tarih</th>
-            <th>Sil</th>
-            <th>Güncelle</th>
-
-
-        </tr>
-        @foreach (var item in Model.Contents)
-        {
-
-            <tr>
-                <td>@item.ContentID</td>
-                <td>@item.Title</td>
-                <td>@item.ContentText</td>
-                <td>@item.User.UserFirstName</td>
-                <td>@item.Seller.SellerName</td>
-                <td>@item.ContentDate.ToShortDateString()</td>
-                <td><a href="/Content/Remove/@item.ContentID" class="btn btn-outline-danger">Sil</a></td>
-                <td><a href="/Content/Update/@item.ContentID" class="btn btn-info">Güncelle</a></td>
-
-            </tr>
-        }
-    </table>
-    <a href="/Content/AddContent" class="btn btn-outline-info">Yeni Content Ekle</a>
-    <a href="/Content/Search" class="btn btn-outline-info">Ara</a>
-    >>>>>>> e71f033e30dbe427521d35d771359e199d6ba690
-
     <!-- Js scripts -->
     <!-- move top -->
     <button onclick="topFunction()" id="movetop" title="Go to top">
@@ -255,11 +361,11 @@
     </script>
     <!-- //move top -->
     <!-- common jquery plugin -->
-    <script src="~/ReviewMe/ReviewMe/assets/js/jquery-3.3.1.min.js"></script>
+    <script src="assets/js/login.js"></script>
+    <script src="assets/js/jquery-3.3.1.min.js"></script>
     <!-- //common jquery plugin -->
     <!-- theme switch js (light and dark)-->
-    <script src="~/ReviewMe/ReviewMe/assets/js/theme-change.js"></script>
-    <script src="~/ReviewMe/ReviewMe/assets/js/login.js"></script>
+    <script src="assets/js/theme-change.js"></script>
     <!-- //theme switch js (light and dark)-->
     <!-- MENU-JS -->
     <script>
@@ -299,10 +405,9 @@
     </script>
     <!-- //disable body scroll which navbar is in active -->
     <!-- bootstrap -->
-    <script src="~/ReviewMe/ReviewMe/assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
     <!-- //bootstrap -->
     <!-- //Js scripts -->
 </body>
 
 </html>
-
