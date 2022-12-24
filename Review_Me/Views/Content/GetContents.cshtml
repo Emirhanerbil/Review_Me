@@ -25,8 +25,8 @@
     <section class="w3l-courses py-5" id="courses">
         <div class="container py-lg-5 py-md-4 py-2">
             <h3 class="title-style text-center">En Fazla Değerlendirilen Hizmetler</h3>
-            <div class="col justify-content-center ">
-                <div class="col-lg-4 col-md-6 item mt-5">
+            <div class="col">
+                <div class="col-md-6 item mt-5 d-flex justify-content-center">
                     <div class="card">
                         <div class="card-header p-0 position-relative">
                             <a href="classes.html" class="zoom d-block">
@@ -54,16 +54,16 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 item mt-5">
+                <div class="row-lg-4 col-md-6 item mt-5">
                     <div class="card">
                         <div class="card-header p-0 position-relative">
                             <a href="classes.html" class="zoom d-block">
-                                <img class="card-img-bottom d-block" src="~/ReviewMe/ReviewMe/assets/images/c2.jpg" alt="Card image cap">
+                                <img class="card-img-bottom d-block" src="~/ReviewMe/ReviewMe/assets/images/banner5.jpg" alt="Card image cap">
                             </a>
                         </div>
                         <div class="card-body course-details">
                             <div class="price-review d-flex justify-content-between mb-1align-items-center">
-                                <p>Halim Usta</p>
+                                <p>Mehmet Usta</p>
                                 <ul class="rating-star">
                                     <li><span class="fas fa-star"></span></li>
                                     <li><span class="fas fa-star"></span></li>
@@ -84,6 +84,7 @@
                 </div>
 
             </div>
+        </div>
     </section>
     <!-- //courses section -->
     <!-- content block1 -->
@@ -119,8 +120,6 @@
             </div>
         </div>
     </section>
-
-    <<<<<<< HEAD
     <!-- footer -->
     <footer class="w3l-footer-16">
         <div class="footer-top-16 py-5">
@@ -194,115 +193,8 @@
 
     </footer>
     <!-- //footer -->
-    =======
-    <table class="table table-bordered">
-        <tr>
-            <th>Id</th>
-            <th>Başlık</th>
-            <th>İçerik</th>
-            <th>Atan kişi</th>
-            <th>Atılan kişi</th>
-            <th>Tarih</th>
-            <th>Sil</th>
-            <th>Güncelle</th>
-
-
-        </tr>
-        @foreach (var item in Model.Contents)
-        {
-
-            <tr>
-                <td>@item.ContentID</td>
-                <td>@item.Title</td>
-                <td>@item.ContentText</td>
-                <td>@item.User.UserFirstName</td>
-                <td>@item.Seller.SellerName</td>
-                <td>@item.ContentDate.ToShortDateString()</td>
-                <td><a href="/Content/Remove/@item.ContentID" class="btn btn-outline-danger">Sil</a></td>
-                <td><a href="/Content/Update/@item.ContentID" class="btn btn-info">Güncelle</a></td>
-
-            </tr>
-        }
-    </table>
-    <a href="/Content/AddContent" class="btn btn-outline-info">Yeni Content Ekle</a>
-    <a href="/Content/Search" class="btn btn-outline-info">Ara</a>
-    >>>>>>> e71f033e30dbe427521d35d771359e199d6ba690
-
-    <!-- Js scripts -->
-    <!-- move top -->
-    <button onclick="topFunction()" id="movetop" title="Go to top">
-        <span class="fas fa-level-up-alt" aria-hidden="true"></span>
-    </button>
-    <script>
-        // When the user scrolls down 20px from the top of the document, show the button
-        window.onscroll = function () {
-            scrollFunction()
-        };
-
-        function scrollFunction() {
-            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-                document.getElementById("movetop").style.display = "block";
-            } else {
-                document.getElementById("movetop").style.display = "none";
-            }
-        }
-
-        // When the user clicks on the button, scroll to the top of the document
-        function topFunction() {
-            document.body.scrollTop = 0;
-            document.documentElement.scrollTop = 0;
-        }
-    </script>
-    <!-- //move top -->
-    <!-- common jquery plugin -->
-    <script src="~/ReviewMe/ReviewMe/assets/js/jquery-3.3.1.min.js"></script>
-    <!-- //common jquery plugin -->
-    <!-- theme switch js (light and dark)-->
-    <script src="~/ReviewMe/ReviewMe/assets/js/theme-change.js"></script>
-    <script src="~/ReviewMe/ReviewMe/assets/js/login.js"></script>
-    <!-- //theme switch js (light and dark)-->
-    <!-- MENU-JS -->
-    <script>
-        $(window).on("scroll", function () {
-            var scroll = $(window).scrollTop();
-
-            if (scroll >= 80) {
-                $("#site-header").addClass("nav-fixed");
-            } else {
-                $("#site-header").removeClass("nav-fixed");
-            }
-        });
-
-        //Main navigation Active Class Add Remove
-        $(".navbar-toggler").on("click", function () {
-            $("header").toggleClass("active");
-        });
-        $(document).on("ready", function () {
-            if ($(window).width() > 991) {
-                $("header").removeClass("active");
-            }
-            $(window).on("resize", function () {
-                if ($(window).width() > 991) {
-                    $("header").removeClass("active");
-                }
-            });
-        });
-    </script>
-    <!-- //MENU-JS -->
-    <!-- disable body scroll which navbar is in active -->
-    <script>
-        $(function () {
-            $('.navbar-toggler').click(function () {
-                $('body').toggleClass('noscroll');
-            })
-        });
-    </script>
-    <!-- //disable body scroll which navbar is in active -->
-    <!-- bootstrap -->
-    <script src="~/ReviewMe/ReviewMe/assets/js/bootstrap.min.js"></script>
-    <!-- //bootstrap -->
-    <!-- //Js scripts -->
+   
+    
 </body>
 
 </html>
-

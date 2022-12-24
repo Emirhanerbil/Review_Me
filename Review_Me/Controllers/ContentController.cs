@@ -77,7 +77,10 @@ namespace Review_Me.Controllers
         }
 
 
-
+        public IActionResult Contact()
+        {
+            return View();
+        }
 
     }
 }

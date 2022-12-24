@@ -1,0 +1,138 @@
+﻿
+@{
+    ViewData["Title"] = "Contact";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!doctype html>
+<html lang="en">
+<body>
+
+<!-- inner banner -->
+<section class="inner-banner py-5">
+    <div class="w3l-breadcrumb py-lg-5">
+        <div class="container pt-5 pb-sm-4 pb-2">
+            <h4 class="inner-text-title font-weight-bold pt-5">Bize Ulaşın</h4>
+            <ul class="breadcrumbs-custom-path">
+                <li><a href="index.html">Home</a></li>
+                <li class="active"><i class="fas fa-angle-right mx-2"></i>İletişim</li>
+            </ul>
+        </div>
+    </div>
+</section>
+<!-- //inner banner -->
+<!-- contact section -->
+<section class="w3l-contact-2 py-5" id="contact">
+    <div class="container py-lg-5 py-md-4 py-2">
+        <div class="w3l-header-sec text-center mb-md-5 mb-4">
+            <h3 class="title-style">Bize Ulaşın</h3>
+        </div>
+        <div class="contact-grids d-grid">
+            <div class="contact-left-img">
+                    <img src="~/ReviewMe/ReviewMe/assets/images/painter3.jpg" class="img-fluid radius-image" alt="">
+            </div>
+            <div class="contact-right">
+                <form action="" method="post" class="signin-form">
+                    <div class="input-grids">
+
+                        <input type="text" name="w3lName" id="w3lName" placeholder="İsminiz"
+                               class="contact-input" required="" />
+                        <input type="email" name="w3lSender" id="w3lSender" placeholder="E-Posta Adresiniz"
+                               class="contact-input" required="" />
+                        <input type="text" name="w3lSubect" id="w3lSubect" placeholder="Konu"
+                               class="contact-input" required="" />
+                       
+                    </div>
+                    <div class="form-input">
+                        <textarea name="w3lMessage" id="w3lMessage" placeholder="Mesajınızı Yazınız"
+                                  required=""></textarea>
+                    </div>
+                    <div class="form-buttonhny text-lg-end">
+                        <button class="btn btn-style btn-primary">Gönder</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="map-iframe mt-5 pt-md-4">
+           @* <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d317718.69319292053!2d-0.3817765050863085!3d51.528307984912544!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d8a00baf21de75%3A0x52963a5addd52a99!2sLondon%2C+UK!5e0!3m2!1sen!2spl!4v1562654563739!5m2!1sen!2spl"
+                    width="100%" height="400" frameborder="0" style="border: 0px;" allowfullscreen=""></iframe>*@
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d529.6584229676865!2d36.263888187621944!3d41.32625327262788!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x408878f9ab74f149%3A0xd5298ec24082799f!2s%C4%B0stiklal%2C%20889.%20Sk.%20No%3A8%2C%2055200%20Atakum%2FSamsun!5e0!3m2!1str!2str!4v1671876141888!5m2!1str!2str" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </div>
+</section>
+<!-- //contact section -->
+    <!-- footer -->
+    <footer class="w3l-footer-16">
+        <div class="footer-top-16 py-5">
+            <div class="container pt-lg-5 pt-md-4 pt-2 pb-lg-4 pb-2">
+                <div class="row">
+                    <div class="col-lg-3 col-sm-6">
+                        <h3>About Us</h3>
+                        <p>
+                            Nam libero tempore, cum soluta nobis est eligendi optio cumque nerihe re impedit quo
+                            minus id qd maxime aceat facere.
+                        </p>
+                        <div class="columns-2 mt-4">
+                            <ul class="social">
+                                <li>
+                                    <a href="#facebook"><i class="fab fa-facebook-f"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#linkedin"><i class="fab fa-linkedin-in"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#twitter"><i class="fab fa-twitter"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#google"><i class="fab fa-google-plus-g"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-6 column ps-xl-5 mt-sm-0 mt-4">
+                        <h3>Quick Link</h3>
+                        <ul class="footer-gd-16">
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="classes.html">Classes</a></li>
+                            <li><a href="#support">Support</a></li>
+                            <li><a href="#blog">Blog Posts</a></li>
+                            <li><a href="contact.html">Contact Us</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 col-6 column ps-xl-5 pe-lg-0 mt-lg-0 mt-4">
+                        <h3>Contact Info</h3>
+                        <ul class="footer-contact-list">
+                            <li class="">
+                                <i class="fas fa-map-marker-alt"></i><span>
+                                    10001,Atakum,
+                                    #32841 block, Türkiye
+                                </span>
+                            </li>
+                            <li class="mt-2">
+                                <i class="fas fa-phone-alt"></i><span>
+                                    <a href="#">
+                                        054212345678
+                                    </a>
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 column mt-lg-0 mt-4 ps-xl-5">
+                        <h3>Subscribe</h3>
+                        <form action="#" class="subscribe d-flex" method="post">
+                            <input type="email" name="email" placeholder="Email Address" required="">
+                            <button class="button-style">
+                                <span class="fa fa-paper-plane"
+                                      aria-hidden="true"></span>
+                            </button>
+                        </form>
+                        <p class="mt-4">Subscribe to our mailing list and get updates to your email inbox.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </footer>
+    <!-- //footer -->
+</body>
+
+</html>
