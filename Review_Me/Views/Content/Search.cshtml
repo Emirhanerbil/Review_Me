@@ -1,4 +1,5 @@
-﻿
+﻿@model List<EntityLayer.Concrete.Content>
+
 @{
     ViewData["Title"] = "Search";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -25,17 +26,27 @@
     <section class="w3l-courses py-5" id="courses">
             <div class="container py-lg-5 py-md-4 py-2">
                 <h3 class="title-style text-center">Arama Sonuçları</h3>
+
+                
+                @foreach (var item in Model)
+                {
+                    
+                  
+                
                 <div class="row justify-content-center ">
                     <div class="col-lg-4 col-md-6 item mt-5">
                         <div class="card">
                             <div class="card-header p-0 position-relative">
+                                
                                 <a href="classes.html" class="zoom d-block">
                                     <img class="card-img-bottom d-block" src="~/ReviewMe/ReviewMe/assets/images/c2.jpg" alt="Card image cap">
                                 </a>
                             </div>
                             <div class="card-body course-details">
                                 <div class="price-review d-flex justify-content-between mb-1align-items-center">
-                                    <p>Mehmet Usta</p>
+                            
+
+                                    <p>@item.ContentID</p>
                                     <ul class="rating-star">
                                         <li><span class="fas fa-star"></span></li>
                                         <li><span class="fas fa-star"></span></li>
@@ -46,14 +57,15 @@
                                 </div>
                                 <a href="classes.html" class="course-desc">Tesisatçı</a>
                                 <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore assumenda beatae
-                                    provident nostrum eum repellendus quis cum quo molestiae eligendi.
+                                    @item.ContentText
                                 </p>
 
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-6 item mt-5">
+
+                    
+                   @* <div class="col-lg-4 col-md-6 item mt-5">
                         <div class="card">
                             <div class="card-header p-0 position-relative">
                                 <a href="classes.html" class="zoom d-block">
@@ -133,11 +145,14 @@
 
                             </div>
                         </div>
-                    </div>
+                    </div>*@
 
 
                     <!-- pagination -->
-                    <!-- <div class="pagination-wrapper mt-5 pt-lg-3 text-center">
+                     
+                
+            </div>}
+            <div class="pagination-wrapper mt-5 pt-lg-3 text-center">
                         <ul class="page-pagination">
                             <li><span aria-current="page" class="page-numbers current">1</span></li>
                             <li><a class="page-numbers" href="#url">2</a></li>
@@ -146,25 +161,7 @@
                             <li><a class="page-numbers" href="#url">15</a></li>
                             <li><a class="next" href="#url">Next <span class="fa fa-angle-right"></span></a></li>
                         </ul>
-                    </div> -->
-                    <!-- //pagination -->
-                </div>
-
-
-
-                <!-- pagination -->
-                <!-- <div class="pagination-wrapper mt-5 pt-lg-3 text-center">
-                    <ul class="page-pagination">
-                        <li><span aria-current="page" class="page-numbers current">1</span></li>
-                        <li><a class="page-numbers" href="#url">2</a></li>
-                        <li><a class="page-numbers" href="#url">3</a></li>
-                        <li><a class="page-numbers" href="#url">...</a></li>
-                        <li><a class="page-numbers" href="#url">15</a></li>
-                        <li><a class="next" href="#url">Next <span class="fa fa-angle-right"></span></a></li>
-                    </ul>
-                </div> -->
-                <!-- //pagination -->
-            </div>
+                    </div> 
     </section>
     <!-- //courses section -->
     <!-- content block1 -->
