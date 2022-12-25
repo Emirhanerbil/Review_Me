@@ -26,6 +26,7 @@ namespace Review_Me.Controllers
             su.Sellers = context.Sellers.ToList();
             su.Users = context.Users.ToList();
             su.Contents = context.Contents.ToList();
+            su.Jobs = context.Jobs.ToList();
             return View(su);
 
         }
@@ -45,8 +46,13 @@ namespace Review_Me.Controllers
         
         public IActionResult Search(string searchTerm)
         {
+            ContentSellerUser su = new ContentSellerUser();
             var searchResults = cm.GetContentByName(searchTerm);
-            return View(searchResults);
+            su.Sellers = context.Sellers.ToList();
+            su.Users = context.Users.ToList();
+            su.Contents = context.Contents.ToList();
+            su.Jobs = context.Jobs.ToList();
+            return View(su);
 
         }
         public IActionResult Remove(int id)
