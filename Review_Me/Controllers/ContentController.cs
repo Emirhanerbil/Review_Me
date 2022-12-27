@@ -87,6 +87,9 @@ namespace Review_Me.Controllers
         {
             return View();
         }
-
+        public IActionResult Profile()
+        {
+            return View();
+        }
     }
 }
