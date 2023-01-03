@@ -118,18 +118,29 @@
                         <!-- form comment -->
                         <div class="form-comment mt-5">
                             <h3 class="post-title mb-4">Değerlendirme Ekle</h3>
+                            <div class="form-group">
+                                <div class="row">
+                                </div>
+                                <textarea class="form-control" placeholder="Konu"
+                                          id="exampleFormControlTextarea1" rows="1"></textarea>                              
+                            </div>
                             <form action="#" method="POST">
                                 <div class="form-group">
                                     <div class="row">                                   
                                     </div>
-                                    <textarea class="form-control" placeholder="Your Message"
+                                    <textarea class="form-control" placeholder="Değerlendirmeniz"
                                               id="exampleFormControlTextarea1" rows="4"></textarea>
-                                    <div class="text-end ms-auto">
-                                        <button class="btn btn-style mt-2" type="submit">
+                                    <div class="d-flex justify-content-between">
+                                        <button class="btn btn-style mt-2" type="submit" >
                                             Değerlendir
                                         </button>
+                                        <div class="upload-btn-wrapper mt-1">
+                                            <button class="btn btn-style">Resim Ekle</button>
+                                            <input type="file" name="myfile" />
+                                        </div>
                                     </div>
                                 </div>
+                               
                             </form>
                         </div>
                     </div>
