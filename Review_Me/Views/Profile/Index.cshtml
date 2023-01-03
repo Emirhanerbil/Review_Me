@@ -1,4 +1,5 @@
-﻿@model ContentSellerUser
+﻿@using EntityLayer.Concrete
+@model List<Seller>
 
 @{
     ViewData["Title"] = "Search";
@@ -82,7 +83,7 @@
         <div class="container py-lg-5 py-md-4 py-2">
             <h3 class="title-style text-center">Arama Sonuçları</h3>
             <div class="row justify-content-center ">
-                @foreach (var item in Model.Sellers)
+                @foreach (var item in Model)
                 {
                     
                 

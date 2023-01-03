@@ -15,5 +15,7 @@ namespace BusinessLayer.Abstract
         List<Seller> GetSeller();
         void SellerUpdate(Seller seller);
         List<Seller> GetSellerByName(string seller);
+
+        List<Seller> GetSellerWithJob();
     }
 }

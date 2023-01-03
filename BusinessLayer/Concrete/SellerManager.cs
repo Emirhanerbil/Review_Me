@@ -35,6 +35,11 @@ namespace BusinessLayer.Concrete
             throw new NotImplementedException();
         }
 
+        public List<Seller> GetSellerWithJob()
+        {
+            return sellerDal.GetListWithJob();
+        }
+
         public void SellerAdd(Seller seller)
         {
             sellerDal.Insert(seller);

@@ -9,5 +9,7 @@ namespace DataAccessLayer.Abstract
 {
     public interface ISellerDal : IGenericDal<Seller>
     {
+        List<Seller> GetListWithJob();
+
     }
 }
