@@ -13,13 +13,9 @@ namespace Review_Me.Controllers
         Context context = new Context();
         public IActionResult Index()
         {
-            ContentSellerUser su = new ContentSellerUser();
-            su.Sellers = context.Sellers.ToList();
-            su.Users = context.Users.ToList();
-            su.Contents = context.Contents.ToList();
-            su.Jobs = context.Jobs.ToList();
+            var value = sm.GetSellerWithJob();
 
-            return View(su);
+            return View(value);
         }
 
         public IActionResult ProfilPage(int id)
