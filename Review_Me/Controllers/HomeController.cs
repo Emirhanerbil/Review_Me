@@ -28,5 +28,9 @@ namespace Review_Me.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+        public IActionResult LoginRegister()
+        {
+            return View();
+        }
     }
 }

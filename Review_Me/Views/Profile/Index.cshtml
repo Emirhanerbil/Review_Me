@@ -13,7 +13,7 @@
     <div class="container">
         <nav class="navbar navbar-expand-lg navbar-light">
             <a class="navbar-brand mb-1" href="/Home/Index">
-                 <img src="~/ReviewMe/ReviewMe/assets/images/yeniLogo.png" style="width:220px; height:45px;">
+                <img src="~/ReviewMe/ReviewMe/assets/images/yeniLogo3.png" style="width:220px; height:53px;">
             </a>
             <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false"
@@ -34,7 +34,7 @@
                         <a class="nav-link" href="/Content/Contact">İletişim</a>
                     </li>
                     <li class="nav-item ">
-                        <a class="nav-link " href="/#login">Kayıt Ol/Giriş Yap</a>
+                        <a class="nav-link " href="/Home/LoginRegister">Kayıt Ol/Giriş Yap</a>
                     </li>
 
                 </ul>
@@ -135,28 +135,8 @@
                 <div class="col-lg-6 col-md-8 title-content py-md-5">
                     <h3 class="title-style text-white">Kayıt Ol Ve Değerlendir</h3>
                     <div class="mt-5" id="blur">
-                        <button id="show-login" onclick="toggle()" class="btn btn-style mt-4">Giriş Yap/Kayıt Ol</button>
-                    </div>
-                    <div class="popup">
-                        <div class="close-btn" onclick="toggle()"><b>X</b></div>
-                        <div class="form">
-                            <h2>Giriş Yap</h2>
-                            <div class="form-element">
-                                <label for="email">Email</label>
-                                <input type="text" id="email" placeholder="E-postanızı Giriniz">
-                                <div class="form-element">
-                                    <label for="password">Şifre</label>
-                                    <input type="password" id="password" placeholder="Şifrenizi Giriniz">
-                                    <div class="form-element">
-                                        <a href="#"><button class="btn btn-style mt-4">Giriş Yap</button></a>
-                                    </div>
-                                    <div class="form-control" style="border: none;">
-                                        <a href="#">Kayıt Ol</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                        <a href="/Home/LoginRegister"><button id="show-login" onclick="toggle()" class="btn btn-style mt-4">Giriş Yap/Kayıt Ol</button></a>
+                    </div>  
                 </div>
             </div>
         </div>

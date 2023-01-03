@@ -1,0 +1,127 @@
+﻿
+@{
+    ViewData["Title"] = "LoginRegister";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- header -->
+<header id="site-header" class="fixed-top">
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <a class="navbar-brand mb-1" href="/Home/Index">
+                 <img src="~/ReviewMe/ReviewMe/assets/images/yeniLogo3.png" style="width:220px; height:53px;">
+            </a>
+            <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon fa icon-expand fa-bars"></span>
+                <span class="navbar-toggler-icon fa icon-close fa-times"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarScroll">
+                <ul class="navbar-nav ms-auto my-2 my-lg-0 navbar-nav-scroll">
+                    <li class="nav-item">
+                        <a class="nav-link " aria-current="page" href="/Home/Index">Ana Sayfa</a>
+                    </li>
+
+                    <li class="nav-item ">
+                        <a class="nav-link " href="/Content/GetContents">Değerlendirmeler</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link " href="/Content/Contact">İletişim</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link active" href="/Home/LoginRegister">Kayıt Ol/Giriş Yap</a>
+                    </li>
+
+                </ul>
+                <form action="#search" method="GET" class="d-flex search-header ms-lg-2">
+                    <input class="form-control" type="search" placeholder="Ara..." aria-label="Search"
+                           required>
+                    <button class="btn btn-style" type="submit"><i class="fas fa-search"></i></button>
+                </form>
+            </div>
+            <!-- toggle switch for light and dark theme -->
+            <div class="cont-ser-position">
+                <nav class="navigation">
+                    <div class="theme-switch-wrapper">
+                        <label class="theme-switch" for="checkbox">
+                            <input type="checkbox" id="checkbox">
+                            <div class="mode-container">
+                                <i class="gg-sun"></i>
+                                <i class="gg-moon"></i>
+                            </div>
+                        </label>
+                    </div>
+                </nav>
+            </div>
+            <!-- //toggle switch for light and dark theme -->
+        </nav>
+
+        
+    </div>
+</header>
+<body>
+    <!-- inner banner -->
+    <section class="inner-banner py-5">
+        <div class="w3l-breadcrumb py-lg-5">
+            <div class="container pt-5 pb-sm-4 pb-2">
+                <h4 class="inner-text-title font-weight-bold pt-5">Kayıt Ol / Giriş Yap</h4>
+                <ul class="breadcrumbs-custom-path">
+                    <li><a href="index.html">Ana Sayfa</a></li>
+                    <li class="active"><i class="fas fa-angle-right mx-2"></i>Kayıt Ol/Giriş Yap</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <!-- //inner banner -->
+    <div class="login-register m-auto mt-5 mb-5">
+        <div class="rl-container" id="container">
+            <div class="form-container sign-up-container">
+                <form action="#">
+                    <h1>Hesap Oluştur</h1>
+                    <div class="social-container">
+                        <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+                        <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                    @*<span>or use your email for registration</span>*@
+                    <input type="text" placeholder="Ad" />
+                    <input type="email" placeholder="Email" />
+                    <input type="password" placeholder="Şifre" />
+                    <button>Kayıt Ol</button>
+                </form>
+            </div>
+            <div class="form-container sign-in-container">
+                <form action="#">
+                    <h1>Giriş Yap</h1>
+                    <div class="social-container">
+                        <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+                        <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                    @*<span>or use your account</span>*@
+                    <input type="email" placeholder="Email" />
+                    <input type="password" placeholder="Şifre" />
+                    <a href="#">Şifrenizi mi unuttunuz?</a>
+                    <button>Giriş Yap</button>
+                </form>
+            </div>
+            <div class="overlay-container">
+                <div class="overlay">
+                    <div class="overlay-panel overlay-left">
+                        <h1>Tekrar Hoşgeldiniz</h1>
+                        <p>Kayıt olmak için kişisel bilgileriniz giriniz</p>
+                        <button class="ghost" id="signIn">Giriş Yap</button>
+                    </div>
+                    <div class="overlay-panel overlay-right">
+                        <h1>Merhaba!</h1>
+                        <p>Bilgilerinizi girerek giriş yapınız</p>
+                        <button class="ghost" id="signUp">Kayıt Ol</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+
