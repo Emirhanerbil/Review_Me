@@ -64,8 +64,14 @@ namespace Review_Me.Controllers
 
         public IActionResult GetContentsJobs()
         {
-            return View();
-       }
+            ContentSellerUser su = new ContentSellerUser();
+
+            su.Sellers = context.Sellers.ToList();
+            su.Users = context.Users.ToList();
+            su.Contents = context.Contents.ToList();
+            su.Jobs = context.Jobs.ToList();
+            return View(su);
+        }
 
 
         public IActionResult Update(int id)
@@ -87,9 +93,19 @@ namespace Review_Me.Controllers
         {
             return View();
         }
-        public IActionResult Profile()
+        public IActionResult Profile(int id)
         {
-            return View();
+            //ContentSellerUser su = new ContentSellerUser();
+
+            //su.Sellers = context.Sellers.ToList();
+            //su.Users = context.Users.ToList();
+            //su.Contents = context.Contents.ToList();
+            //su.Jobs = context.Jobs.ToList();
+            //return View(su);
+
+            var value = cm.GetContentByID(id);
+            return View(value);
         }
+        
     }
 }

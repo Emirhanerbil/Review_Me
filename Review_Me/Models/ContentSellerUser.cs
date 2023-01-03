@@ -9,5 +9,9 @@ namespace Review_Me.Models
         public IEnumerable<Content> Contents { get; set; }
         public IEnumerable<Job> Jobs { get; set; }
 
+        public Seller seller2 { get; set; }
+
+
+
     }
 }

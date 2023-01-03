@@ -1,4 +1,6 @@
-﻿@model EntityLayer.Concrete.Seller
+﻿@using EntityLayer.Concrete
+@model Seller
+
 @{
     ViewData["Title"] = "Profile";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -79,13 +81,15 @@
         <div class="container py-lg-5 py-md-4 py-2">
             <div class="row">
                 <div class="col-lg-8 mx-auto">
-                    <div class="blog-single-post">                  
+                   <div class="blog-single-post"> 
+                       
+                                   
                         <a href="blog-single3.html">
                             <img src="~/ReviewMe/ReviewMe/assets/images/ustalar.png" class="img-fluid radius-image" alt="blog-post-image" />
                         </a>
                         <div class="post-content px-0 border-0">
                             <h3 class="text-head-text-9 text-center mt-4">
-                                @Model.SellerName
+                                @Model.SellerName @Model.SellerLastName
                             </h3>
                             <p class="mt-3">
                                 
@@ -133,14 +137,15 @@
                         <div class="comments-blog mt-5">
                             <h3 class="post-title mb-4">Değerlendirmeler</h3>
                            
+                             
+                           
                                
                            
                             <div class="media">
                                 <div class="img-circle" style = "width: 100px">
                                     <img src="~/ReviewMe/ReviewMe/assets/images/testi1.jpg" width="100px" class="img-fluid" alt="...">
                                 </div>
-                                <div class="media-body" style = "width: 600px";
->
+                                <div class="media-body" style = "width: 600px";>
                                     <div class="medi-top mb-2 d-flex justify-content-between">
                                         <a href="#URL" class="name mt-0"></a>
                                         <span> </span>
@@ -152,6 +157,7 @@
                                   
                                 </div>
                             </div>
+                            
                            
                            @* <div class="media bod-3">
                                 <div class="img-circle">
@@ -174,29 +180,18 @@
                         <!-- form comment -->
                         <div class="form-comment mt-5">
                             <h3 class="post-title mb-4">Değerlendirme Ekle</h3>
-                            <div class="form-group">
-                                <div class="row">
-                                </div>
-                                <textarea class="form-control" placeholder="Konu"
-                                          id="exampleFormControlTextarea1" rows="1"></textarea>                              
-                            </div>
                             <form action="#" method="POST">
                                 <div class="form-group">
                                     <div class="row">                                   
                                     </div>
-                                    <textarea class="form-control" placeholder="Değerlendirmeniz"
+                                    <textarea class="form-control" placeholder="Your Message"
                                               id="exampleFormControlTextarea1" rows="4"></textarea>
-                                    <div class="d-flex justify-content-between">
-                                        <button class="btn btn-style mt-2" type="submit" >
+                                    <div class="text-end ms-auto">
+                                        <button class="btn btn-style mt-2" type="submit">
                                             Değerlendir
                                         </button>
-                                        <div class="upload-btn-wrapper mt-1">
-                                            <button class="btn btn-style">Resim Ekle</button>
-                                            <input type="file" name="myfile" />
-                                        </div>
                                     </div>
                                 </div>
-                               
                             </form>
                         </div>
                     </div>

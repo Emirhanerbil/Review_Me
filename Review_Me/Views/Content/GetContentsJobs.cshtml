@@ -1,10 +1,68 @@
-﻿
+﻿@model ContentSellerUser
 @{
     ViewData["Title"] = "GetContentsJobs";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <!doctype html>
 <html lang="en">
+
+
+<!-- header -->
+<header id="site-header" class="fixed-top">
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <a class="navbar-brand mb-1" href="/Home/Index">
+                 <img src="~/ReviewMe/ReviewMe/assets/images/yeniLogo.png" style="width:220px; height:45px;">
+            </a>
+            <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon fa icon-expand fa-bars"></span>
+                <span class="navbar-toggler-icon fa icon-close fa-times"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarScroll">
+                <ul class="navbar-nav ms-auto my-2 my-lg-0 navbar-nav-scroll">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="/Home/Index">Ana Sayfa</a>
+                    </li>
+
+                    <li class="nav-item ">
+                        <a class="nav-link active " href="/Content/GetContents">Değerlendirmeler</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link  " href="/Content/Contact">İletişim</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link " href="/#login">Kayıt Ol/Giriş Yap</a>
+                    </li>
+
+                </ul>
+                <form action="#search" method="GET" class="d-flex search-header ms-lg-2">
+                    <input class="form-control" type="search" placeholder="Ara..." aria-label="Search"
+                           required>
+                    <button class="btn btn-style" type="submit"><i class="fas fa-search"></i></button>
+                </form>
+            </div>
+            <!-- toggle switch for light and dark theme -->
+            <div class="cont-ser-position">
+                <nav class="navigation">
+                    <div class="theme-switch-wrapper">
+                        <label class="theme-switch" for="checkbox">
+                            <input type="checkbox" id="checkbox">
+                            <div class="mode-container">
+                                <i class="gg-sun"></i>
+                                <i class="gg-moon"></i>
+                            </div>
+                        </label>
+                    </div>
+                </nav>
+            </div>
+            <!-- //toggle switch for light and dark theme -->
+        </nav>
+        
+    </div>
+</header>
+
     <body>
 <section class="inner-banner py-5">
     <div class="w3l-breadcrumb py-lg-5">
@@ -22,19 +80,25 @@
 <section class="w3l-courses py-5" id="courses">
     <div class="container py-lg-5 py-md-4 py-2">
         <h3 class="title-style text-center">En Fazla Değerlendirilen Hizmetler</h3>
-        <div class="row justify-content-center">
+        
+            
+       
+        <div class=" row justify-content-center ">
+          @foreach (var item in Model.Jobs)
+        {  
+
             <div class="col-lg-4 col-md-6 item mt-5">
                 <div class="card">
                     <div class="card-header p-0 position-relative">
                         <a href="classes.html" class="zoom d-block">
-                            <img class="card-img-bottom d-block" src="~/ReviewMe/ReviewMe/assets/images/ismet.png" alt="Card image cap">
+                            <img class="card-img-bottom d-block" src="https://fastly.4sqi.net/img/general/600x600/87250539_ijQaX-nVB8nyOb4xoAFpr5kwT001bfnLWmQFa9202bM.jpg" alt="Card image cap">
                         </a>
 
                     </div>
                     <div class="card-body course-details">
                         <div class="price-review d-flex justify-content-between mb-1align-items-center">
                         </div>
-                        <a href="classes.html" class="course-desc">Özel Ders Öğretmeni </a>
+                        <a href="classes.html" class="course-desc">@item.JobName </a>
                         <div class="course-meta mt-4">
                             <div class="meta-item course-lesson">
                                 <span class="fas fa-users"></span>
@@ -43,116 +107,8 @@
                         </div>
                     </div>
                 </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 item mt-5">
-                <div class="card">
-                    <div class="card-header p-0 position-relative">
-                        <a href="classes.html" class="zoom d-block">
-                            <img class="card-img-bottom d-block" src="~/ReviewMe/ReviewMe/assets/images/tutor2.png" alt="Card image cap">
-                        </a>
-
-                    </div>
-                    <div class="card-body course-details">
-                        <div class="price-review d-flex justify-content-between mb-1align-items-center">
-                        </div>
-                        <a href="classes.html" class="course-desc">Özel Ders Öğretmeni </a>
-                        <div class="course-meta mt-4">
-                            <div class="meta-item course-lesson">
-                                <span class="fas fa-users"></span>
-                                <span class="meta-value"> 82  değerlendirme</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 item mt-5">
-                <div class="card">
-                    <div class="card-header p-0 position-relative">
-                        <a href="classes.html" class="zoom d-block">
-                            <img class="card-img-bottom d-block" src="~/ReviewMe/ReviewMe/assets/images/tutor2.png" alt="Card image cap">
-                        </a>
-
-                    </div>
-                    <div class="card-body course-details">
-                        <div class="price-review d-flex justify-content-between mb-1align-items-center">
-                        </div>
-                        <a href="classes.html" class="course-desc">Özel Ders Öğretmeni </a>
-                        <div class="course-meta mt-4">
-                            <div class="meta-item course-lesson">
-                                <span class="fas fa-users"></span>
-                                <span class="meta-value"> 82  değerlendirme</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 item mt-5">
-                <div class="card">
-                    <div class="card-header p-0 position-relative">
-                        <a href="classes.html" class="zoom d-block">
-                            <img class="card-img-bottom d-block" src="~/ReviewMe/ReviewMe/assets/images/tutor2.png" alt="Card image cap">
-                        </a>
-
-                    </div>
-                    <div class="card-body course-details">
-                        <div class="price-review d-flex justify-content-between mb-1align-items-center">
-                        </div>
-                        <a href="classes.html" class="course-desc">Özel Ders Öğretmeni </a>
-                        <div class="course-meta mt-4">
-                            <div class="meta-item course-lesson">
-                                <span class="fas fa-users"></span>
-                                <span class="meta-value"> 82  değerlendirme</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 item mt-5">
-                <div class="card">
-                    <div class="card-header p-0 position-relative">
-                        <a href="classes.html" class="zoom d-block">
-                            <img class="card-img-bottom d-block" src="~/ReviewMe/ReviewMe/assets/images/tutor2.png" alt="Card image cap">
-                        </a>
-
-                    </div>
-                    <div class="card-body course-details">
-                        <div class="price-review d-flex justify-content-between mb-1align-items-center">
-                        </div>
-                        <a href="classes.html" class="course-desc">Özel Ders Öğretmeni </a>
-                        <div class="course-meta mt-4">
-                            <div class="meta-item course-lesson">
-                                <span class="fas fa-users"></span>
-                                <span class="meta-value"> 82  değerlendirme</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 item mt-5">
-                <div class="card">
-                    <div class="card-header p-0 position-relative">
-                        <a href="classes.html" class="zoom d-block">
-                            <img class="card-img-bottom d-block" src="~/ReviewMe/ReviewMe/assets/images/tutor2.png" alt="Card image cap">
-                        </a>
-
-                    </div>
-                    <div class="card-body course-details">
-                        <div class="price-review d-flex justify-content-between mb-1align-items-center">
-                        </div>
-                        <a href="classes.html" class="course-desc">Özel Ders Öğretmeni </a>
-                        <div class="course-meta mt-4">
-                            <div class="meta-item course-lesson">
-                                <span class="fas fa-users"></span>
-                                <span class="meta-value"> 82  değerlendirme</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            </div>} 
+            
         </div>
 
     </div>

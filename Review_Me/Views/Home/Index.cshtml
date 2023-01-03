@@ -1,11 +1,65 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
-    
-}
 
+}
+<!-- header -->
+<header id="site-header" class="fixed-top">
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <a class="navbar-brand mb-1" href="/Home/Index">
+                 <img src="~/ReviewMe/ReviewMe/assets/images/yeniLogo.png" style="width:220px; height:45px;">
+            </a>
+            <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon fa icon-expand fa-bars"></span>
+                <span class="navbar-toggler-icon fa icon-close fa-times"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarScroll">
+                <ul class="navbar-nav ms-auto my-2 my-lg-0 navbar-nav-scroll">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/Home/Index">Ana Sayfa</a>
+                    </li>
+
+                    <li class="nav-item ">
+                        <a class="nav-link " href="/Content/GetContents">Değerlendirmeler</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link " href="/Content/Contact">İletişim</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link " href="/#login">Kayıt Ol/Giriş Yap</a>
+                    </li>
+
+                </ul>
+                <form action="#search" method="GET" class="d-flex search-header ms-lg-2">
+                    <input class="form-control" type="search" placeholder="Ara..." aria-label="Search"
+                           required>
+                    <button class="btn btn-style" type="submit"><i class="fas fa-search"></i></button>
+                </form>
+            </div>
+            <!-- toggle switch for light and dark theme -->
+            <div class="cont-ser-position">
+                <nav class="navigation">
+                    <div class="theme-switch-wrapper">
+                        <label class="theme-switch" for="checkbox">
+                            <input type="checkbox" id="checkbox">
+                            <div class="mode-container">
+                                <i class="gg-sun"></i>
+                                <i class="gg-moon"></i>
+                            </div>
+                        </label>
+                    </div>
+                </nav>
+            </div>
+            <!-- //toggle switch for light and dark theme -->
+        </nav>
+        
+    </div>
+</header>
 
  <!-- banner section -->
- 
+
     <section class="w3l-main-slider" id="home">
         <div class="banner-content">
 
@@ -22,7 +76,7 @@
                 "/ReviewMe/ReviewMe/assets/images/barber.jpg",
                 "/ReviewMe/ReviewMe/assets/images/painter.jpg"]'
                 data-zs-overlay="dots" >
-               
+
 
                 <div class="demo-inner-content text-center">
                     <div class="container">
@@ -181,7 +235,7 @@
                               <a href="#"><button class="btn btn-style mt-4">Giriş Yap</button></a>  
                               </div>
                               <div class="form-control" style="border: none;">
-                                <a href="#">Kayıt Ol</a>
+                                <a style="text-align: center;"href="#">Kayıt Ol</a>
                               </div>
                             </div>
                           </div>
@@ -262,5 +316,5 @@
             </div>
         </div>
     </div>
-   
+
 </footer>*@
