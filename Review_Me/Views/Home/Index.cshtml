@@ -7,7 +7,7 @@
     <div class="container">
         <nav class="navbar navbar-expand-lg navbar-light">
             <a class="navbar-brand mb-1" href="/Home/Index">
-                 <img src="~/ReviewMe/ReviewMe/assets/images/yeniLogo.png" style="width:220px; height:45px;">
+                 <img src="~/ReviewMe/ReviewMe/assets/images/yeniLogo3.png" style="width:220px; height:53px;">
             </a>
             <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false"
@@ -28,9 +28,8 @@
                         <a class="nav-link " href="/Content/Contact">İletişim</a>
                     </li>
                     <li class="nav-item ">
-                        <a class="nav-link " href="/#login">Kayıt Ol/Giriş Yap</a>
+                        <a class="nav-link " href="/Home/LoginRegister">Kayıt Ol/Giriş Yap</a>
                     </li>
-
                 </ul>
                 <form action="#search" method="GET" class="d-flex search-header ms-lg-2">
                     <input class="form-control" type="search" placeholder="Ara..." aria-label="Search"
@@ -64,20 +63,11 @@
         <div class="banner-content">
 
             <div id="demo-1"
-             data-zs-src='["/ReviewMe/ReviewMe/assets/images/plumber.jpg",
-                "/ReviewMe/ReviewMe/assets/images/tutor.jpg",
+             data-zs-src='["/ReviewMe/ReviewMe/assets/images/tutord.jpg",
+                "/ReviewMe/ReviewMe/assets/images/plumberd.jpg",
                 "/ReviewMe/ReviewMe/assets/images/barber.jpg",
-                "/ReviewMe/ReviewMe/assets/images/painter.jpg"]'
+                "/ReviewMe/ReviewMe/assets/images/cleaner.jpg"]'
                 data-zs-overlay="dots">
-
-            <div id="demo-1",data-zs-autoplay="true"
-             data-zs-src='["/ReviewMe/ReviewMe/assets/images/plumber.jpg" ,
-                "/ReviewMe/ReviewMe/assets/images/tutor.jpg",
-                "/ReviewMe/ReviewMe/assets/images/barber.jpg",
-                "/ReviewMe/ReviewMe/assets/images/painter.jpg"]'
-                data-zs-overlay="dots" >
-
-
                 <div class="demo-inner-content text-center">
                     <div class="container">
                         <div class="banner-info">                                                     
@@ -88,6 +78,8 @@
                 </div>
             </div>
         </div>
+      
+
     </section>
     <!-- //banner section -->
 
@@ -177,32 +169,31 @@
                 <div class="col-lg-6 ps-xl-5 ps-lg-4 mt-lg-0 mt-5">
                     <h5 class="sub-title">Özelliklerimiz</h5>
                     <h3 class="title-style mb-4">Neden Biz</h3>
-                    <p>Lorem ipsum viverra feugiat. Pellen tesque libero ut justo,
-                        ultrices in ligula. Semper at tempufddfel. Lorem ipsum dolor sit amet consectetur adipisicing
-                        elit.</p>
+                <p>Amacımız, insanların aldıkları hizmetleri objektif bir şekilde değerlendirme fırsatı sunmaktır. 
+                    Böylece, gerçek hizmetlerin kalitesi hakkında daha doğru bir fikir edinebilir, doğru seçimler yapabilirsiniz.</p>
                     <div class="two-grids mt-5">
                         <div class="grids_info">
-                            <i class="fas fa-trophy"></i>
+                        <i class="fas fa-solid fa-comment"></i>
                             <div class="detail">
-                                <h4>Lorem ipsum dolor sit amet.</h4>
-                                <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-                                    mollit.</p>
+                                <h4>Objektif Değerlendirme</h4>
+                            <p>Uygulamamızda, meslek sahiplerinin yapılan hizmetlerini objektif olarak değerlendirme fırsatı sunuyoruz.
+                                Bu sayede, gerçek hizmetlerin kalitesi hakkında daha doğru bir fikir edinebilirsiniz.</p>
                             </div>
                         </div>
                         <div class="grids_info mt-xl-5 mt-lg-4 mt-5">
-                            <i class="fas fa-user-friends"></i>
+                        <i class="fas fa-solid fa-check"></i>
                             <div class="detail">
-                                <h4>Lorem ipsum dolor sit amet.</h4>
-                                <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-                                    mollit.</p>
+                                <h4>Spam Yorumların Önüne Geçme</h4>
+                            <p>Meslek sahiplerine yapılan spam yorumların önüne geçmek amacıyla, admin tarafında gelişmiş algoritmalar kullanıyoruz. 
+                                Böylece, sizler gerçek hizmetler hakkında daha doğru bilgiye sahip olabilirsiniz.</p>
                             </div>
                         </div>
                         <div class="grids_info mt-xl-5 mt-lg-4 mt-5">
-                            <i class="fas fa-hourglass-half"></i>
+                        <i class="fas fa-user-friends"></i>
                             <div class="detail">
-                                <h4>Lorem ipsum dolor sit amet.</h4>
-                                <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-                                    mollit.</p>
+                                <h4>Daha Fazla Kişiye Ulaşabilme Fırsatı</h4>
+                            <p>Meslek sahiplerinin yaptıkları işler hakkında yapılan olumlu değerlendirmeler, onları daha fazla kişi tarafından keşfedilme fırsatı sunar.
+                                Uygulamamız sayesinde, iyi hizmetleri olan meslek sahiplerinin daha fazla müşteriye ulaşmasına yardımcı olabiliriz.</p>
                             </div>
                         </div>
                     </div>
@@ -219,9 +210,9 @@
                 <div class="col-lg-6 col-md-8 title-content py-md-5">
                     <h3 class="title-style text-white">Kayıt Ol Ve Değerlendir</h3>               
                     <div class="mt-5" id="blur">
-                        <button id="show-login" onclick="toggle()" class="btn btn-style mt-4">Giriş Yap/Kayıt Ol</button>
+                    <a href="/Home/LoginRegister"><button id="show-login" onclick="toggle()" class="btn btn-style mt-4">Giriş Yap/Kayıt Ol</button></a>                      
                       </div>
-                      <div class="popup">
+                      @*<div class="popup">
                         <div class="close-btn" onclick="toggle()"><b>X</b></div>
                         <div class="form">
                           <h2>Giriş Yap</h2>
@@ -240,7 +231,7 @@
                             </div>
                           </div>
                         </div>
-                      </div>
+                      </div>*@
                 </div>
             </div>
         </div>
