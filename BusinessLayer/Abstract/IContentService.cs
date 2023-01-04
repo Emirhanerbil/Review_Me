@@ -12,8 +12,10 @@ namespace BusinessLayer.Abstract
         void ContentAdd(Content content);
         void ContentRemove(Content content);
         Content GetContentByID(int id);
-        List<Content> GetContents();
+        List<Content> GetContents(int id);
         void ContentUpdate(Content content);
         List<Content> GetContentByName(string name);
+
+        List<Content> GetContentWithSeller();
     }
 }

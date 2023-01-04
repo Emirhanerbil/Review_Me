@@ -57,9 +57,24 @@ namespace BusinessLayer.Concrete
             
         }
 
-        public List<Content> GetContents()
+        public List<Content> GetContents(int id)
         {
-            return contentDal.GetAll();
+            return contentDal.GetAll(x => x.Seller.SellerID == id);
+        }
+
+        public List<Content> GetContentWithSeller(int id)
+        {
+            return contentDal.GetAll(x => x.ContentID == id);
+        }
+
+        public List<Content> GetContentID(int id)
+        {
+            return contentDal.GetAll(x => x.ContentID == id);
+        }
+
+        public List<Content> GetContentWithSeller()
+        {
+            throw new NotImplementedException();
         }
     }
 }

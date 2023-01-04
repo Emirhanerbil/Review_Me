@@ -9,6 +9,7 @@ namespace Review_Me.Controllers
 {
     public class ProfileController : Controller
     {
+        ContentManager cm = new ContentManager(new EFContentRepository());
         SellerManager sm = new SellerManager(new EFSellerRepository());
         Context context = new Context();
         public IActionResult Index()
@@ -20,18 +21,24 @@ namespace Review_Me.Controllers
 
         public IActionResult ProfilPage(int id)
         {
-            var value = sm.GetSellerByID(id);
+            ViewBag.i = id;    
+            var value = sm.GetSellerID(id);
+
             return View(value);
         }
-        [HttpPost]
-        public IActionResult ProfilPage(Seller seller)
+        public IActionResult AddReview()
         {
-            ContentSellerUser su = new ContentSellerUser();
-            sm.SellerUpdate(seller);
-            su.seller2 = context.Sellers.ToList()[0];
 
-
-            return View(su);
+            return PartialView();
         }
+        [HttpPost]
+        public IActionResult AddReview(Content content)
+        {
+            
+            content.UserID = 1;
+            cm.ContentAdd(content);
+            return RedirectToAction(nameof(Index));
+        }
+
     }
 }

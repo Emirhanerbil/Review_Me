@@ -1,5 +1,5 @@
 ﻿@using EntityLayer.Concrete
-@model Seller
+@model IEnumerable<Seller>
 
 @{
     ViewData["Title"] = "Profile";
@@ -81,15 +81,21 @@
         <div class="container py-lg-5 py-md-4 py-2">
             <div class="row">
                 <div class="col-lg-8 mx-auto">
+                        
+                        
+                   
+                    
                    <div class="blog-single-post"> 
-                       
+                        @foreach (var item in Model)
+                    {
+                        
                                    
                         <a href="blog-single3.html">
                             <img src="~/ReviewMe/ReviewMe/assets/images/ustalar.png" class="img-fluid radius-image" alt="blog-post-image" />
                         </a>
                         <div class="post-content px-0 border-0">
                             <h3 class="text-head-text-9 text-center mt-4">
-                                @Model.SellerName @Model.SellerLastName
+                                @item.SellerName @item.SellerLastName
                             </h3>
                             <p class="mt-3">
                                 
@@ -111,7 +117,7 @@
                             </h6>
                           
                         </div>
-                        
+                       
                        
                         <div class="row mt-md-5 mt-4">
                             <div class="col">
@@ -131,32 +137,11 @@
                                 </div>
                             </div>
                         </div>
+                        }
+
+                        @await Component.InvokeAsync("ReviewListBySeller",new {id = ViewBag.i})
+                        @await Html.PartialAsync("~/Views/Review/AddReview.cshtml")
                        
-                        
-                        <!-- blog comments -->
-                        <div class="comments-blog mt-5">
-                            <h3 class="post-title mb-4">Değerlendirmeler</h3>
-                           
-                             
-                           
-                               
-                           
-                            <div class="media">
-                                <div class="img-circle" style = "width: 100px">
-                                    <img src="~/ReviewMe/ReviewMe/assets/images/testi1.jpg" width="100px" class="img-fluid" alt="...">
-                                </div>
-                                <div class="media-body" style = "width: 600px";>
-                                    <div class="medi-top mb-2 d-flex justify-content-between">
-                                        <a href="#URL" class="name mt-0"></a>
-                                        <span> </span>
-                                    </div>
-                                    <p>
-                                     
-                                    </p>
-                                    
-                                  
-                                </div>
-                            </div>
                             
                            
                            @* <div class="media bod-3">
@@ -178,42 +163,12 @@
                             </div>*@
                         </div>
                         <!-- form comment -->
-                        <div class="form-comment mt-5">
-                            <h3 class="post-title mb-4">Değerlendirme Ekle</h3>
-                            <form action="#" method="POST">
-                                <div class="form-group">
-                                    <div class="row">                                   
-                                    </div>
-                                    <textarea class="form-control" placeholder="Your Message"
-                                              id="exampleFormControlTextarea1" rows="4"></textarea>
-                                    <div class="text-end ms-auto">
-                                        <button class="btn btn-style mt-2" type="submit">
-                                            Değerlendir
-                                        </button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                        <div class="pagination-wrapper mt-5 pt-lg-3 text-center">
-                            <ul class="page-pagination">
-                                <li><span aria-current="page" class="page-numbers current">1</span></li>
-                                <li><a class="page-numbers" href="#url">2</a></li>
-                                <li><a class="page-numbers" href="#url">3</a></li>
-                                <li><a class="next" href="#url">Next <span class="fa fa-angle-right"></span></a></li>
-                            </ul>
-                        </div>
+                       
                     </div>
                 </div>
             </div>
         </div>
-        <div class="pagination-wrapper mt-5 pt-lg-3 text-center">
-            <ul class="page-pagination">
-                <li><span aria-current="page" class="page-numbers current">1</span></li>
-                <li><a class="page-numbers" href="#url">2</a></li>
-                <li><a class="page-numbers" href="#url">3</a></li>
-                <li><a class="next" href="#url">Next <span class="fa fa-angle-right"></span></a></li>
-            </ul>
-        </div>
+        
     </section>
     
     <!-- //blog single -->

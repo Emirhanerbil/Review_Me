@@ -17,5 +17,8 @@ namespace BusinessLayer.Abstract
         List<Seller> GetSellerByName(string seller);
 
         List<Seller> GetSellerWithJob();
+
+
+       
     }
 }

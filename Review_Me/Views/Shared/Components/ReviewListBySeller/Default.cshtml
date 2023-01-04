@@ -1,0 +1,25 @@
+﻿@using EntityLayer.Concrete
+@model IEnumerable<Content>
+
+                       <div class="comments-blog mt-5">
+                                <h3 class="post-title mb-4">Değerlendirmeler</h3>
+                                @foreach (var item in Model)
+                        {
+                                <div class="media">
+                                    <div class="img-circle" style = "width: 100px">
+                                        <img src="~/ReviewMe/ReviewMe/assets/images/testi1.jpg" width="100px" class="img-fluid" alt="...">
+                                    </div>
+                                   <div class="media-body" style= "width:600px">
+                                    <div class="medi-top mb-2 d-flex justify-content-between">
+                                        <a href="#URL" class="name mt-0">@item.Title</a>
+                                        <span>@item.ContentDate.ToShortDateString() </span>
+                                    </div>
+                                    <p>
+                                        @item.ContentText
+                                    </p>
+                                    
+                                </div>
+                                </div>
+                                }
+                            </div>
+                        

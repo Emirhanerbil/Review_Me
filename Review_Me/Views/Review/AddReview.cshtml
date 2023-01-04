@@ -1,0 +1,35 @@
+﻿@using EntityLayer.Concrete
+@model List<Seller>
+
+
+    @foreach (var item in Model)
+    {
+        
+   
+<div class="form-comment mt-5">
+                            <h3 class="post-title mb-4">Değerlendirme Ekle</h3>
+                            <form action="/Profile/AddReview/" method="POST">
+                                <div class="form-group">
+                                    <div class="row">                                   
+                                    </div>
+                                    <textarea class="form-control" placeholder="Başlık"
+                                              id="exampleFormControlTextarea1" rows="4" name = "Title"></textarea>
+                                              <textarea class="form-control" placeholder="İçerik"
+                                              id="exampleFormControlTextarea1" rows="4" name ="ContentText"></textarea>
+                                              <input type="hidden" name="sellerId" value="@item.SellerID" />
+                                    <div class="text-end ms-auto">
+                                        <button class="btn btn-style mt-2" type="submit">
+                                            Değerlendir
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="pagination-wrapper mt-5 pt-lg-3 text-center">
+                            <ul class="page-pagination">
+                                <li><span aria-current="page" class="page-numbers current">1</span></li>
+                                <li><a class="page-numbers" href="#url">2</a></li>
+                                <li><a class="page-numbers" href="#url">3</a></li>
+                                <li><a class="next" href="#url">Next <span class="fa fa-angle-right"></span></a></li>
+                            </ul>
+            </div>  }    

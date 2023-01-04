@@ -4,6 +4,7 @@ using DataAccessLayer.Concrete.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DataAccessLayer.Migrations
 {
     [DbContext(typeof(Context))]
-    partial class ContextModelSnapshot : ModelSnapshot
+    [Migration("20230104000635_fix")]
+    partial class fix
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -168,7 +171,7 @@ namespace DataAccessLayer.Migrations
             modelBuilder.Entity("EntityLayer.Concrete.Content", b =>
                 {
                     b.HasOne("EntityLayer.Concrete.Seller", "Seller")
-                        .WithMany("Contents")
+                        .WithMany("Content")
                         .HasForeignKey("SellerID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -202,7 +205,7 @@ namespace DataAccessLayer.Migrations
 
             modelBuilder.Entity("EntityLayer.Concrete.Seller", b =>
                 {
-                    b.Navigation("Contents");
+                    b.Navigation("Content");
                 });
 
             modelBuilder.Entity("EntityLayer.Concrete.User", b =>

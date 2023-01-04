@@ -8,6 +8,8 @@ namespace EntityLayer.Concrete
 {
     public class Seller
     {
+
+       
         public int SellerID { get; set; }
         public string SellerName { get; set; }
         public string SellerLastName { get; set; }
@@ -15,9 +17,11 @@ namespace EntityLayer.Concrete
         public string? SellerPhoto { get; set; }
         public string SellerMail { get; set; }
         public string SellerPasword { get; set; }
-        public ICollection<Content> Content { get; set; }
+        
         public Job Job { get; set; }
         public int JobID { get; set; }
+
+        public List<Content> Contents { get; set; }
 
     }
 }

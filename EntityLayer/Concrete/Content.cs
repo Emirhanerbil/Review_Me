@@ -10,8 +10,8 @@ namespace EntityLayer.Concrete
 {
     public class Content
     {
-        
 
+       
         [Key]
         public int ContentID { get; set; }
         public string Title { get; set; }
@@ -21,11 +21,12 @@ namespace EntityLayer.Concrete
         public bool isFlagged { get; set; }
         public string? FlagContent { get; set; }
 
+        public int SellerID { get; set; }
+        public Seller Seller { get; set; }
 
 
         public User User { get; set; }
         public int UserID { get; set; }
-        public Seller Seller { get; set; }
-        public int SellerID { get; set; }
+        
     }
 }

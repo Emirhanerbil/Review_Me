@@ -29,6 +29,10 @@ namespace BusinessLayer.Concrete
         {
             return sellerDal.GetById(id);
         }
+        public List<Seller> GetSellerID(int id)
+        {
+            return sellerDal.GetAll(x => x.SellerID == id);
+        }
 
         public List<Seller> GetSellerByName(string seller)
         {

@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -33,6 +34,11 @@ namespace DataAccessLayer.Repositories
         {
             c.Add(item);
             c.SaveChanges();
+        }
+
+        public List<T> GetAll(Expression<Func<T, bool>> filter)
+        {
+            return c.Set<T>().Where(filter).ToList();
         }
 
         public List<T> SearchName(string name)

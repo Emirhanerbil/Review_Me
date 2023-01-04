@@ -4,6 +4,7 @@ using DataAccessLayer.Concrete.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DataAccessLayer.Migrations
 {
     [DbContext(typeof(Context))]
-    partial class ContextModelSnapshot : ModelSnapshot
+    [Migration("20230104000255_relation1")]
+    partial class relation1
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -21,6 +24,21 @@ namespace DataAccessLayer.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
+
+            modelBuilder.Entity("ContentSeller", b =>
+                {
+                    b.Property<int>("ContentID")
+                        .HasColumnType("int");
+
+                    b.Property<int>("SellerID")
+                        .HasColumnType("int");
+
+                    b.HasKey("ContentID", "SellerID");
+
+                    b.HasIndex("SellerID");
+
+                    b.ToTable("ContentSeller");
+                });
 
             modelBuilder.Entity("EntityLayer.Concrete.Content", b =>
                 {
@@ -62,11 +80,32 @@ namespace DataAccessLayer.Migrations
 
                     b.HasKey("ContentID");
 
-                    b.HasIndex("SellerID");
-
                     b.HasIndex("UserID");
 
                     b.ToTable("Contents");
+                });
+
+            modelBuilder.Entity("EntityLayer.Concrete.ContentSeller", b =>
+                {
+                    b.Property<int>("ContentID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ContentID"));
+
+                    b.Property<int>("ContentID1")
+                        .HasColumnType("int");
+
+                    b.Property<int>("SellerID")
+                        .HasColumnType("int");
+
+                    b.HasKey("ContentID");
+
+                    b.HasIndex("ContentID1");
+
+                    b.HasIndex("SellerID");
+
+                    b.ToTable("ContentSellers");
                 });
 
             modelBuilder.Entity("EntityLayer.Concrete.Job", b =>
@@ -165,23 +204,49 @@ namespace DataAccessLayer.Migrations
                     b.ToTable("Users");
                 });
 
-            modelBuilder.Entity("EntityLayer.Concrete.Content", b =>
+            modelBuilder.Entity("ContentSeller", b =>
                 {
-                    b.HasOne("EntityLayer.Concrete.Seller", "Seller")
-                        .WithMany("Contents")
-                        .HasForeignKey("SellerID")
+                    b.HasOne("EntityLayer.Concrete.Content", null)
+                        .WithMany()
+                        .HasForeignKey("ContentID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("EntityLayer.Concrete.Seller", null)
+                        .WithMany()
+                        .HasForeignKey("SellerID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("EntityLayer.Concrete.Content", b =>
+                {
                     b.HasOne("EntityLayer.Concrete.User", "User")
                         .WithMany("Content")
                         .HasForeignKey("UserID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Seller");
-
                     b.Navigation("User");
+                });
+
+            modelBuilder.Entity("EntityLayer.Concrete.ContentSeller", b =>
+                {
+                    b.HasOne("EntityLayer.Concrete.Content", "Content")
+                        .WithMany()
+                        .HasForeignKey("ContentID1")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("EntityLayer.Concrete.Seller", "Seller")
+                        .WithMany()
+                        .HasForeignKey("SellerID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Content");
+
+                    b.Navigation("Seller");
                 });
 
             modelBuilder.Entity("EntityLayer.Concrete.Seller", b =>
@@ -198,11 +263,6 @@ namespace DataAccessLayer.Migrations
             modelBuilder.Entity("EntityLayer.Concrete.Job", b =>
                 {
                     b.Navigation("Seller");
-                });
-
-            modelBuilder.Entity("EntityLayer.Concrete.Seller", b =>
-                {
-                    b.Navigation("Contents");
                 });
 
             modelBuilder.Entity("EntityLayer.Concrete.User", b =>
